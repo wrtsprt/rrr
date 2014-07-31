@@ -1,12 +1,7 @@
-# Rails 4 App Template
+RRR - RSS stuff
 
-* SLIM
-* quite\_assets
-* Twitter Bootstrap
-* rspec
-
-# Customization
-
-## Twitter Bootstrap
-
-(Github sass-bootstrap)[https://github.com/twbs/bootstrap-sass#usage]
+TODO:
+* parsing OPML into feed subscriptions
+* fetching / buffering rss feeds
+* adding content / mingling feeds / ...
+* saving read / unread state
