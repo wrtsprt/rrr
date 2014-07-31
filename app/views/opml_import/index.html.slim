@@ -1,0 +1,7 @@
+h1 OpmlImport#index
+p Find me in app/views/opml_import/index.html.slim
+
+p
+ = form_tag({action: :import}, multipart: true) do
+   = file_field_tag 'file'
+   = button_tag :submit

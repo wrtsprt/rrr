@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/feedbin/opml_saw.git
+  revision: 61d8c2dd3d46e9cae38178754469dd9da7c8bd6a
+  branch: master
+  specs:
+    opml_saw (0.0.2)
+      nokogiri
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -61,8 +69,11 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.6.0)
     minitest (5.3.4)
     multi_json (1.10.1)
+    nokogiri (1.6.3.1)
+      mini_portile (= 0.6.0)
     orm_adapter (0.5.0)
     polyglot (0.3.5)
     quiet_assets (1.0.2)
@@ -158,6 +169,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  opml_saw!
   quiet_assets
   rails (= 4.1.1)
   rspec-rails
