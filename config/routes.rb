@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :subscriptions
+
   get 'opml_import/index'
 
   post 'opml_import/import'
