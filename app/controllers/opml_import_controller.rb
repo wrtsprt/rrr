@@ -16,6 +16,9 @@ class OpmlImportController < ApplicationController
     opml.parse
     @feeds = opml.feeds
     Rails.logger.debug opml.feeds
+    @feeds.each do |feed|
+      Subscription.create name: feed[:title], feed_url: feed[:xml_url], http_url: feed[:html_url]
+    end
 
     render :imported
   end
