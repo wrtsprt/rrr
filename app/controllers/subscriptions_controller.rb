@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-  before_action :set_subscription, only: [:show, :edit, :update, :destroy]
+  before_action :set_subscription, only: [:show, :edit, :update, :destroy, :cache_feed]
 
   # GET /subscriptions
   # GET /subscriptions.json
@@ -59,6 +59,11 @@ class SubscriptionsController < ApplicationController
       format.html { redirect_to subscriptions_url, notice: 'Subscription was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def cache_feed
+    FeedItemDownloader.cache_feed(@subscription.feed_url)
+    redirect_to action: :index
   end
 
   private

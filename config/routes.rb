@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  resources :subscriptions
+  resources :subscriptions do
+    member do
+      get 'cache_feed'
+    end
+  end
 
   get 'opml_import/index'
-
   post 'opml_import/import'
 
   devise_for :users

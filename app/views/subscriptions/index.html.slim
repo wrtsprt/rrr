@@ -5,7 +5,6 @@ table
     tr
       th Name
       th Feed url
-      th Http url
       th
       th
       th
@@ -15,8 +14,7 @@ table
       tr
         td = subscription.name
         td = subscription.feed_url
-        td = subscription.http_url
-        td = link_to 'Show', subscription
+        td = link_to 'Cache', cache_feed_subscription_path(subscription)
         td = link_to 'Edit', edit_subscription_path(subscription)
         td = link_to 'Destroy', subscription, data: {:confirm => 'Are you sure?'}, :method => :delete
 
