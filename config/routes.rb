@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'read_mode/index'
+
   resources :subscriptions do
     member do
       get 'cache_feed'
