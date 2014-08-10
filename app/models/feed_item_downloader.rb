@@ -13,8 +13,8 @@ class FeedItemDownloader
                          title:        entry.title,
                          url:          entry.url,
                          published_at: entry.published.to_s,
-                         created_at:   Time.now.to_s
-                         #content:      extract_content(entry.url)
+                         created_at:   Time.now.to_s,
+                         content:      open(entry.url).read
                          )
         feed_item.save
       end
