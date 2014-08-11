@@ -1,8 +1,9 @@
 h1 All items
 
 ul
-  - @items.each do |item|
-    li = "#{item.title}: #{item.content}"
+  - @items.each_with_index do |item, i|
+    li id="article-#{i}"
+      == "#{item.title}: #{item.content}"
 
 
 
