@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'read_mode/index'
+  post 'read_mode/mark_item_as_read'
 
   resources :subscriptions do
     member do
