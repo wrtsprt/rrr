@@ -1,7 +1,5 @@
 class FeedItemDownloader
 
-  require 'html/sanitizer'
-
   def self.cache_feed(url)
     raise 'feed is empty' if url.blank?
     feed = Feedjira::Feed.fetch_and_parse(url)
@@ -11,8 +9,8 @@ class FeedItemDownloader
       Rails.logger.debug "=> processing #{entry.url}"
       if feed_item.nil?
         raw_content = open(entry.url).read
-        sanitizer = HTML::FullSanitizer.new
-        sanitized_content = sanitizer.sanitize(raw_content,  tags: %w(i b a img))
+        # sanitized_content = Sanitize.fragment(raw_content, :elements => ['b a img'])
+        sanitized_content = Sanitize.fragment(raw_content,Sanitize::Config::BASIC)
 
         feed_item = FeedItem.new(
                          feed:         url,
