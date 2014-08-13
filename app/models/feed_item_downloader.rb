@@ -9,8 +9,7 @@ class FeedItemDownloader
         Rails.logger.debug "=> processing #{entry.url}"
         if feed_item.nil?
           raw_content = open(entry.url).read
-          # sanitized_content = Sanitize.fragment(raw_content, :elements => ['b a img'])
-          sanitized_content = Sanitize.fragment(raw_content,Sanitize::Config::BASIC)
+          sanitized_content = Nokogiri::HTML(raw_content).text
 
           feed_item = FeedItem.new(
                            feed:         url,

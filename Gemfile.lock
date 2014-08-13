@@ -47,7 +47,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    crass (0.2.1)
     curb (0.8.6)
     devise (3.2.4)
       bcrypt (~> 3.0)
@@ -82,8 +81,6 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
-    nokogumbo (1.1.9)
-      nokogiri
     orm_adapter (0.5.0)
     polyglot (0.3.5)
     quiet_assets (1.0.2)
@@ -125,10 +122,6 @@ GEM
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.0)
-    sanitize (3.0.0)
-      crass (~> 0.2.0)
-      nokogiri (>= 1.4.4)
-      nokogumbo (= 1.1.9)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -186,11 +179,11 @@ DEPENDENCIES
   feedjira
   jbuilder (~> 2.0)
   jquery-rails
+  nokogiri
   opml_saw!
   quiet_assets
   rails (= 4.1.1)
   rspec-rails
-  sanitize
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   slim-rails
