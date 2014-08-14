@@ -8,6 +8,11 @@ html
   = csrf_meta_tags
 
 body
+  nav
+    ul
+      li= link_to 'Import', opml_import_index_path
+      li= link_to 'Subscriptions', subscriptions_path
+      li= link_to 'Reading', read_mode_index_path
   p class="notice"
     = notice
   p class="alert"
