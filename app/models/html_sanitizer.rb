@@ -1,0 +1,2 @@
+class HtmlSanitizer
+end
