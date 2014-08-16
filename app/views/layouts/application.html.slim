@@ -13,10 +13,11 @@ body
       .navbar-header
         a.navbar-brand href="/"  RRR
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        - current_uri = request.env['PATH_INFO']
         ul.nav.navbar-nav
           li class=(current_page?(controller: 'opml_import', action: 'index') ? 'active' : 'inactive')
-            = link_to 'Import', opml_import_index_path
-          li class=(current_page?(controller: 'subscriptions', action: 'index') ? 'active' : 'inactive')
+            = link_to 'import', opml_import_index_path
+          li class=(current_page?(controller: 'subscriptions', action: 'index') || current_uri == '/' ? 'active' : 'inactive')
             = link_to 'subscriptions', subscriptions_path
           li class=(current_page?(controller: 'read_mode', action: 'index') ? 'active' : 'inactive')
             = link_to 'read', read_mode_index_path
@@ -25,5 +26,6 @@ body
     = notice
   p class="alert"
     = alert
+
   div class="container"
     = yield
