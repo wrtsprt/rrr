@@ -3,15 +3,14 @@ require 'sanitize'
 
 RSpec.describe HtmlSanitizer do
 
-  describe 'ddd' do
-
+  it 'sanitizes html' do
     file = File.new(Rails.root.join('test/fixtures/heise-article.html'))
     lines = file.readlines
     Rails.logger.debug lines
-    lines.should_not == nil
+    expect(lines).not_to eq(nil)
 
     #clean = Sanitize.document(lines.join, Sanitize::Config::RELAXED)
-    #clean.should_not == nil
+    #expect(clean).not_to eq(nil)
 
   end
 
