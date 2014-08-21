@@ -62,7 +62,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def cache_feed
-    FeedItemDownloader.cache_feed(@subscription.feed_url)
+    FeedItemDownloader.cache_feed(@subscription)
     redirect_to action: :index
   end
 

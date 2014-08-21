@@ -6,12 +6,14 @@ table
       th
       th
       th
+      th
 
   tbody
     - @subscriptions.each do |subscription|
       tr
         td = subscription.name
         td = subscription.feed_url
+        td = subscription.subscription_notifications.count
         td = link_to 'Cache', cache_feed_subscription_path(subscription)
         td = link_to 'Edit', edit_subscription_path(subscription)
         td = link_to 'Destroy', subscription, data: {:confirm => 'Are you sure?'}, :method => :delete
