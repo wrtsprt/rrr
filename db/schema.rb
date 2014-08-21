@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140813153451) do
   create_table "subscription_notifications", force: true do |t|
     t.string   "type"
     t.text     "body"
+    t.integer  "subscription_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
