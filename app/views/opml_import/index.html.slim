@@ -1,4 +1,5 @@
 p
  = form_tag({action: :import}, multipart: true) do
-   = file_field_tag 'file'
+   .form-group
+     = file_field_tag 'file', class: 'form-control'
    = button_tag :submit
