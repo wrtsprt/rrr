@@ -1,4 +1,4 @@
-= form_for @subscription do |f|
+= form_for @subscription, class: 'form' do |f|
   - if @subscription.errors.any?
     #error_explanation
       h2 = "#{pluralize(@subscription.errors.count, "error")} prohibited this subscription from being saved:"
@@ -6,13 +6,13 @@
         - @subscription.errors.full_messages.each do |message|
           li = message
 
-  .field
+  .form-group
     = f.label :name
-    = f.text_field :name
-  .field
+    = f.text_field :name, class: 'form-control'
+  .form-group
     = f.label :feed_url
-    = f.text_field :feed_url
-  .field
+    = f.text_field :feed_url, class: 'form-control'
+  .form-group
     = f.label :http_url
-    = f.text_field :http_url
-  .actions = f.submit 'Save'
+    = f.text_field :http_url, class: 'form-control'
+  .actions = f.submit 'Save', class: 'btn btn-primary'
