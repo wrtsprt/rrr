@@ -21,6 +21,8 @@ body
             = link_to 'subscriptions', subscriptions_path
           li class=(current_page?(controller: 'read_mode', action: 'index') ? 'active' : 'inactive')
             = link_to 'read', read_mode_index_path
+          li class=(current_page?(controller: 'improve_sanitization', action: 'show') ? 'active' : 'inactive')
+            = link_to 'sanitize check', improve_sanitization_show_path
 
   p class="notice"
     = notice

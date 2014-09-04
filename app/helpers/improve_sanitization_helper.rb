@@ -1,0 +1,2 @@
+module ImproveSanitizationHelper
+end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'improve_sanitization/show'
+
   get 'read_mode/index'
   post 'read_mode/mark_item_as_read'
 
