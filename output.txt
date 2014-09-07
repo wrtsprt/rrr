@@ -1,0 +1,1063 @@
+
+
+
+
+
+    20 Jahre Smartphone: Mit IBMs Simon fing alles an | heise online
+    
+
+    
+
+
+
+
+
+    
+     
+    
+                        
+        
+        
+        
+        
+            
+        
+        
+        
+    
+    
+    
+    
+       
+    
+    
+
+    
+
+
+
+    
+
+
+    
+
+    
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            
+
+
+
+
+
+
+
+
+
+
+ 
+     
+         
+             
+                
+                 
+                     Einloggen auf heise online 
+                 
+             
+             
+                 
+                    
+                        
+                    
+                    Men�� auf-/zuklappen
+                     
+                         
+                             
+                                 
+                                     News 
+                                     c't 
+                                     iX 
+                                     Technology Review 
+                                     Mac &amp; i 
+                                     Telepolis 
+                                     c't Hacks 
+                                     Digitale Fotografie 
+                                 
+                             
+                             
+                                 
+                                     heise Autos 
+                                     heise Developer 
+                                     heise Foto 
+                                     heise Netze 
+                                     heise Open Source 
+                                     heise Security 
+                                     heise Video 
+                                     TechStage 
+                                 
+                             
+                             
+                                 
+                                     Download 
+                                     Preisvergleich 
+                                     Stellenmarkt 
+                                     Veranstaltungen 
+                                     IT-Markt 
+                                     Whitepapers 
+                                     Webcasts 
+                                     Tarifrechner 
+                                 
+                             
+                             
+                                 
+                                     heise shop 
+                                     Artikel-Archiv 
+                                     Zeitschriften-Abo 
+                                     Arbeiten bei heise 
+                                 
+                             
+                         
+                     
+                 
+             
+
+            
+
+            
+                
+                    
+                    
+            
+
+            
+                
+                    
+                    
+                
+            
+         
+     
+     
+ 
+
+
+
+
+     
+         
+             
+                 
+                        News
+                 
+                 
+                     Newsticker 
+                     7-Tage-News 
+                     Archiv 
+                     Foren 
+                 
+                 
+                     RSS 
+                     Newsletter 
+                     Google+ 
+                     Facebook 
+                     Twitter 
+                     Kontakt 
+                 
+             
+                             
+                                 Topthemen: 
+                                 
+                                     Gamescom 
+                                     Black Hat 
+                                     Oculus Rift 
+                                     VDSL-Vectoring 
+                                     NSA 
+                                     Netzneutralit��t 
+                                     Windows 8.1 
+                                     LTE 
+                                     Android 
+                                     iPad 
+                                     iPhone 
+                                 
+                             
+                
+	 
+	
+		heise online
+		&gt;
+	
+		News
+		&gt;
+	
+		2014
+		&gt;
+	
+		KW 33
+		&gt;
+	
+		20 Jahre Smartphone: Mit IBMs Simon fing alles an
+		
+	
+	 
+
+
+             
+                 
+            
+             
+    
+         
+            �� Vorige
+            |
+            N��chste ��
+         
+         
+     
+         17.08.2014 17:13 
+        
+        
+          20 Jahre Smartphone: Mit IBMs Simon fing alles an 
+        
+        
+        
+        
+             
+                
+             
+        
+        
+        
+         
+        
+             Vor 20 Jahren kam das erste "Smartphone" auf den Markt: Auf dem ��ber 500 Gramm schweren Simon Personal Communicator von IBM konnte man damals sogar schon Apps installieren - und eine Tastatur mit Zeichenvorhersage gab es auch. 
+             
+
+    
+    
+         
+        
+            Klobig, kontrastarm, aber extrem innovativ: IBMs Simon.
+            
+            
+            
+        
+    
+    
+    
+
+
+Vor 20 Jahren begann in den USA die Erfolgsgeschichte des Smartphones: Am 16. August 1994 kamen die ersten Exemplare des Simon Personal Communicator auf den Markt ��� auch wenn das Wort "Smartphone" damals noch gar nicht existierte. Hersteller IBM vermarktete das 510 Gramm schwere Ger��t als Kombination aus Mobiltelefon und PDA. Gefertigt wurde der aus heutiger Sicht unangenehm klobige Klotz (23 Zentimeter hoch!) von Mitsubishi. Gr����ter Kritikpunkt war damals allerdings nicht das Design, sondern das Display: Das hatte n��mlich nicht nur eine sehr geringe Aufl��sung (160 �� 293 Pixel), sondern war vor allem extrem kontrastarm. Der Akku hielt im Telefonie-Modus nur eine Stunde lang, vermutlich legte IBM deshalb auch gleich zwei Nickel-Cadmium-Akkus bei. 
+ Angetrieben wurde Simon von einem mit 16 MHz getakteten, x86-kompatiblen Vadem-Prozessor, der auf ein MByte Arbeitsspeicher zugreifen konnte. Der Festspeicher war ebenfalls ein MByte gro��. Hierauf konnten Zusatzprogramme ��� heute Apps genannt ��� installiert werden, die entweder per Download oder ��ber PCMCIA-Erweiterungskarte aufs Ger��t kamen. Richtig in Fahrt kam das Simon-App-��kosystem allerdings nicht, genaugenommen gab es nur ein einziges Zusatzprogramm: "DispatchIt", ein fr��her Remote-Desktop-Vertreter. Die Host-Software f��r den PC kostete damals straffe 2999 US-Dollar, f��r den Simon-Client wurden 299 US-Dollar f��llig. 
+ 
+  
+	Bild 1 von 5
+	 IBM Simon: Klobig, aber innovativ (5 Bilder) 
+	 
+	 
+	Bedient wurde der Simon mit einem Stylus.  (Bild: IBM)
+ 
+
+
+ Als Betriebssystem kam kurioserwes das MS-DOS-kompatible ROM-DOS von Datalight zum Einsatz. Mit der Kommandozeile mussten sich Simon-Nutzer dennoch nicht herum��rgern; hatte IBM doch eine grafische Benutzeroberfl��che namens Navigator entwickelt. Bedient wurde der Smartphone-Pionier mit einem Stylus. Die Software-Tastatur bot sogar eine Zeichen-Vorhersage namens "PredictaKey": Je nach eingetipptem Buchstaben schlug sie die sechs wahrscheinlichsten n��chsten Zeichen vor. Au��erdem an Bord: Ein Zeichenprogramm, Adressverwaltung, Kalender, Taschenrechner und ein Verschiebepuzzle ��� aber kein Webbrowser. 
+ Obwohl 50.000 St��ck verkauft wurden und IBM bereits an einem Simon-Nachfolger arbeitete, kam kein neuer Personal Communicator auf den Markt ��� wie so oft in der Technikgeschichte war Simon zu fr��h dran, die Welt war f��rs Smartphone noch nicht reif. IBMs innovatives Ger��t wird jetzt zumindest museale Ehre zuteil: Anl��sslich des 20j��hrigen Jubil��ums bekommt IBMs Simon im Oktober einen festen Platz im London Science Museum. 
+  Mehr Details zum IBM Simon (inklusive der kompletten Anleitung als PDF) gibt es bei Microsoft Research.  
+
+
+
+(jkj)
+ 
+
+
+
+
+         
+        
+        
+     
+         
+        �� Vorige
+        |
+        N��chste ��
+         
+
+    
+        
+             
+            
+                
+            
+             
+                
+                    
+                        
+                            Kommentare lesen
+                        
+                         
+                            (44 Beitr��ge)
+                        
+                    
+                
+             
+         
+
+         
+            Version zum Drucken |
+            Per E-Mail versenden |
+            Newsletter abonnieren
+         
+             Permalink: http://heise.de/-2293693 
+         
+        
+ 
+     Artikel zum Thema 
+     
+    
+          Bonusbilder zu "Acht Gramm Personal Trainer"  Bonusbilder zu "Acht Gramm Personal Trainer", c't 12/13, S. 56  
+        
+    
+     
+ 
+
+
+        
+ 
+    Mehr zum Thema 
+    
+        Handy
+    
+        IBM
+    
+        Smartphone
+    
+ 
+
+
+        
+    
+    
+
+
+ 
+
+            
+             
+                
+
+Anzeige 
+ 
+
+
+
+             
+                
+                 
+                 
+                            
+
+ Anzeige 
+ 
+ 
+
+
+                                
+                                
+                  Top-News                       FinFisher &amp; Co. machen harmlose Katzenvideos zur Waffe f��r Cyber-Attacken              Gamescom: Neue Spielmodi und mehr Schiffe f��r Chris Roberts "Star Citizen"              Smartphone-Markt: Android ��ber alles              Safe Harbor: Datenschutzbeschwerde gegen US-Firmen              NSA/GCHQ Hacienda: Die vollst��ndige Kolonisierung des Netzes          
+     
+
+                            
+    
+         
+             
+                
+                    
+                        
+                     
+                
+                c't 
+                
+                    
+                       
+                    
+                    Die Alles-Abspiel-Box
+                    
+                        
+                    
+                     
+                
+                Mit dem freien XBMC Media Center und 35-Euro-Hardware bekommt man einen vielseitigen Multimedia-Player f��rs Wohnzimmer.
+             
+             
+         
+    
+
+
+
+                            
+    
+         
+             
+                
+                    
+                        
+                     
+                
+                heise open 
+                
+                    
+                       
+                    
+                    Die Eigenbau-Roboter kommen
+                    
+                        
+                    
+                     
+                
+                Im Projekt InMoov entsteht ein Roboter, dessen Baupl��ne als Open Hardware offen liegen. Ein 3D-Drucker ist alles, was man braucht, um InMoov zu bauen.
+             
+             
+         
+    
+
+
+
+                            
+    
+         
+             
+                
+                    
+                        
+                     
+                
+                heise Security 
+                
+                    
+                       
+                    
+                    Warum Google uns echte Verschl��sselung verweigert
+                    
+                        
+                    
+                     
+                
+                Warum haben wir eigentlich immer noch keine einfach zu nutzende Ende-zu-Ende-Verschl��sselung? Die Standardantwort lautet: Viel zu kompliziert! Doch das ist Unsinn; Apple zeigt, wie einfach das sein kann.
+             
+             
+         
+    
+
+
+
+                            
+    
+         
+             
+                
+                    
+                        
+                     
+                
+                heise Developer 
+                
+                    
+                       
+                    
+                    Continuous Delivery
+                    
+                        
+                    
+                     
+                
+                Mit Continuous Delivery erhalten Entwicklungsteams jederzeit einen ��berblick ��ber die Qualit��t der Software. Doch wie sehen die konkreten Schritte hin zu einer entsprechenden Pipeline aus?
+             
+             
+         
+    
+
+
+
+                                
+         
+            Anzeige 
+            
+            
+             
+        
+
+
+                                
+     
+         Anzeige 
+         
+        
+             Webcast: Ihr Netz ��� endlich performant und sicher! 
+        
+             Webcast: Verschleierte Angriffe erkennen / abwehren 
+        
+             Lastspitzen im RZ ohne Zusatzkosten abfangen 
+        
+             Webcast: Software Defined Networking (plus Demo) 
+        
+             Rechenzentrum: schnell bauen, flexibel einrichten 
+        
+             RZ-Betrieb so einfach wie Autofahren ��� so geht���s! 
+        
+             Bildarchiv-Chaos? Verschlagwortung &amp; Datenpflege 
+        
+         
+     
+
+
+                            
+                             
+     Anzeige 
+     
+        Der Stellenmarkt auf heise online.
+     
+     
+     
+             Software-Entwickler Linux C++ (w/m)
+            Entwicklung von L��sungen und Produkte in C++ und f��r Linux 
+            
+         
+     
+             Softwareentwickler (m/w)
+            Entwicklung von Software-Anwendungen (C #) 
+            
+         
+     
+             Fachinformatiker/-in Systemintegration
+            Incidentmanagement, Changemanagement und Service-Desk - 1st Level Support 
+            
+         
+     
+ 
+
+
+                            
+    
+         
+             
+                
+                    
+                        
+                     
+                
+                heise Foto 
+                
+                    
+                       
+                    
+                    80.000 Weltkriegsbilder eingef��rbt
+                    
+                        
+                    
+                     
+                
+                3 Jahre Produktionszeit, 6,2 Mio. Euro Produktionskosten: F��r die f��nfteilige Dokureihe "Apokalypse Erster Weltkrieg" hat ein Team ��ber Jahre rund 80.000 Bilder eingef��rbt.
+             
+             
+         
+    
+
+
+
+                            
+    
+         
+             
+                
+                    
+                        
+                     
+                
+                heise Autos 
+                
+                    
+                       
+                    
+                    Wunsch und Wirklichkeit
+                    
+                        
+                    
+                     
+                
+                Vorher-Nachher-Vergleich von Serienautos, die viel von ihren Studien mitbekommen haben
+             
+             
+         
+    
+
+
+
+                            
+    
+         
+             
+                
+                    
+                        
+                     
+                
+                heise Netze 
+                
+                    
+                       
+                    
+                    iMonitor ��� Internet-St��rungen
+                    
+                        
+                    
+                     
+                
+                Unser Tool zeigt mit Ihrer Hilfe, an welchen Orten welche Zug��nge nicht funktionieren.
+             
+             
+         
+    
+
+
+
+                            
+    
+         
+             
+                
+                    
+                        
+                     
+                
+                
+                
+                    
+                       
+                    
+                    Neu: c't wissen 3D-Druck
+                    
+                        
+                    
+                     
+                
+                3D-Druck von A-Z: Grundlagen-Artikel, 3D-Modelle selbst konstruieren, scannen und aufbereiten, selbst drucken und 3D-Drucker im Test 
+             
+             
+         
+    
+
+
+
+                            
+
+ 
+     heise Download 
+    
+     
+	
+	Must-Haves für Windows
+	Zeiten ändern sich: Wir zeigen, welche Programme auf keinem Rechner fehlen sollten – und auf welche man inzwischen verzichten kann.
+     
+    
+
+     
+	 im Fokus 
+	 Top-Downloads 
+         
+
+    
+     
+	
+	     
+		TrueCrypt
+		Die aktuelle Version der Verschlüsselungs-Software TrueCrypt gilt als unsicher. Wir bieten daher weiterhin die Vorgängerversion zum Download an.
+	     
+	
+	     
+		Firefox
+		Firefox ist ein quelloffener Web-Browser, der sich über zahlreiche Add-ons stark erweitern lässt.
+	     
+	
+	     
+		Goat Simulator
+		Im Goat Simulator sorgt man als bockige Ziege mit absurden Stunts für Unruhe und Zerstörung.
+	     
+	
+	     
+		WhatsApp
+		Instant-Messaging-Dienst für Smartphones; verschickt Nachrichten, Bilder, Sprachnotizen und Videos über die mobile Internetverbindung
+	     
+	
+	     
+		Flappy Bird - App für Android (APK)
+		Das Kultspiel Flappy Bird steht bei uns für Android-Geräte weiterhin zum Download.
+	     
+	
+	
+     
+    
+     
+	
+	     
+		AdwCleaner
+		AdwCleaner ist ein schlankes Werkzeug, das störende und gefährliche Software wie Adware, Toolbars und Hijacker auf dem Rechner findet und entfernt.
+	     
+	
+	     
+		TrueCrypt
+		Die aktuelle Version der Verschlüsselungs-Software TrueCrypt gilt als unsicher. Wir bieten daher weiterhin die Vorgängerversion zum Download an.
+	     
+	
+	     
+		IrfanView
+		Der erweiterbare Bildbetrachter IrfanView zeigt Fotos und spielt Multimedia-Formate ab.
+	     
+	
+	     
+		H2testw
+		Integritätstest für Datenträger, vor allem zur Erkennung manipulierter USB-Sticks ...
+	     
+	
+	     
+		Firefox
+		Firefox ist ein quelloffener Web-Browser, der sich über zahlreiche Add-ons stark erweitern lässt.
+	     
+	
+	
+	 
+	    Alle Top-Downloads
+	 
+	
+     
+    
+
+ 
+
+                            
+                             
+                            
+    
+     
+         
+             Meistgelesen 
+             Meistkommentiert 
+         
+         
+             
+                 NSA/GCHQ Hacienda: Die vollst��ndige Kolonisierung des Netzes 
+                 Def Con 22: Millionen DSL-Router durch TR-069-Fernwartung kompromittierbar 
+                 Smartphone-Markt: Android ��ber alles 
+                 Mailserver von Web.de, GMX und 1&amp;1 auf Spam-Blacklist  
+                 Gamescom: "Alien Isolation" liefert feinsten Retro-Horror in Surround-Sound 
+             
+         
+         
+             
+            
+  
+     
+      
+	Smartphone-Markt: Android ��ber alles
+      
+     
+  
+     
+      
+	Mehr als 1000 Autoren protestieren gegen Amazon-Methoden
+      
+     
+  
+     
+      
+	Goal? Copyright! Britischer Fu��ball-Verband warnt Fans
+      
+     
+  
+     
+      
+	Wikipedia: Superprotect-Streit spitzt sich zu 
+      
+     
+  
+     
+      
+	Telekom fordert Milliarden vom Bund f��r Breitband-Ausbau
+      
+     
+  
+
+
+             
+         
+     
+
+
+
+                            
+ 
+     Neueste Foren-Beiträge 
+
+	 
+  	
+    	 
+      		Re: provo oder meinst du das ernst?
+    	 
+  		
+    	 
+      		Re: M��nchen geht von der Fahne
+    	 
+  		
+    	 
+      		Re: das w��rde aber bedeuten
+    	 
+  		
+    	 
+      		Re: So lange sie Microsoft Windows XP verwenden...
+    	 
+  		
+    	 
+      		Q.E.D, Wem sagst DU das?
+    	 
+  		
+	 
+ 
+
+                             
+     ONLINE MARKT 
+     Werbung 
+    
+     
+	 Verbundene Unternehmen 
+	
+         
+	
+     
+ 
+
+                            
+                            
+
+ Anzeige 
+ 
+ 
+
+
+                            
+
+ Anzeige 
+ 
+ 
+
+
+                             
+                 
+             
+             
+                 
+                     heise online 
+                     c't Magazin 
+                     iX Magazin 
+                     Technology Review 
+                     Mac &amp; i 
+                 
+                 
+                     Telepolis 
+                     c't Hacks 
+                     Digitale Fotografie 
+                     heise Autos 
+                     heise Developer 
+                 
+                 
+                     heise Foto 
+                     heise Netze 
+                     Open Source 
+                     heise Security 
+                 
+                 
+                     heise Video 
+                     TechStage 
+                     Download 
+                     Preisvergleich 
+                     Stellenmarkt 
+                 
+                 
+                     Veranstaltungen 
+                     IT-Markt 
+                     heise Whitepapers 
+                     Tarifrechner 
+                     Shop 
+                 
+                 
+                     Artikel-Archiv 
+                     Abo 
+                     Loseblattwerke 
+                     RSS 
+                 
+                 
+                     Leserforum 
+                     Newsletter 
+                     Suche 
+                     iMonitor 
+                 
+             
+         
+         
+             
+ 
+ 
+             
+             
+ 
+ 
+            
+         
+        
+     
+
+
+
+
+
+
+
+
+ 
+    
+        
+        
+        
+             
+        
+        
+        
+            
+            
+            
+            
+        
+
+    
+    
+
+
+
+
+
+    
+    
+     
+
+
+
+
+
+
+    
+    
+
+
+    
+        
+
+	 
+
+	
+		 Datenschutzhinweis  
+	
+
+	
+		 Impressum  
+	
+
+	
+		 Kontakt 
+	
+
+	
+		 Mediadaten  
+	
+
+	
+		 News mobil 
+	
+
+
+ 
+1289623
+ 
+
+
+    
+         Content Management by InterRed 
+    
+
+	
+		
+		 Hosted by Plus.line  
+		
+		 Copyright �� 2014 Heise Zeitschriften Verlag  
+		
+	
+
+	
+ 
+
+    
+
+ 
+
+
+
+
+
+
+
+
+
+
+

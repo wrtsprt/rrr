@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'feed_item/show/:id' => 'feed_item#show', as: :feed_item
+
+  get 'feed_item/clean'
+
   get 'improve_sanitization/show'
 
   get 'read_mode/index'

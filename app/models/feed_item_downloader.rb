@@ -9,7 +9,7 @@ class FeedItemDownloader
         Rails.logger.debug "=> processing #{entry.url}"
         if feed_item.nil?
           raw_content = open(entry.url).read
-          sanitized_content = Nokogiri::HTML(raw_content).text
+          sanitized_content = HtmlSanitizer.clean(raw_content)
 
           feed_item = FeedItem.new(
                            feed:         url,
