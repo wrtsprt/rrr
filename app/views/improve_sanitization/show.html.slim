@@ -1,5 +1,11 @@
 .row
+  = link_to 'original', feed_item_path(@item)
+.row
   .col-md-6
-    = @item.content
+    = @relaxed
   .col-md-6
-    = @item.sanitized_content
+    = @cleaned
+.row
+  .col-md-6
+    = @relaxed
+
