@@ -8,11 +8,14 @@ Rails.application.routes.draw do
   get 'read_mode/index'
   post 'read_mode/mark_item_as_read'
 
+  get 'cache_all_feeds' => 'subscriptions#cache_all_feeds', as: :cache_all_feeds
+
   resources :subscriptions do
     member do
       get 'cache_feed'
     end
   end
+
 
   get 'opml_import/index'
   post 'opml_import/import'

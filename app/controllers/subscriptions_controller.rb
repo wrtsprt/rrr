@@ -66,6 +66,13 @@ class SubscriptionsController < ApplicationController
     redirect_to action: :index
   end
 
+  def cache_all_feeds
+    Subscription.all.each do |subscription|
+      FeedItemDownloader.cache_feed(subscription)
+    end
+    redirect_to action: :index
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_subscription
