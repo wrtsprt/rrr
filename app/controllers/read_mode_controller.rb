@@ -6,4 +6,11 @@ class ReadModeController < ApplicationController
   def mark_item_as_read
     render text: 'very well than'
   end
+
+  def get
+    @items = FeedItem.where(read: false).order(published_at: :asc).limit(2)
+    respond_to do |format|
+      format.json { render :json => @items.to_json }
+    end
+  end
 end

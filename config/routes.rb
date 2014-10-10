@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'improve_sanitization/show'
 
   get 'read_mode/index'
+  get 'read_mode/get'
   post 'read_mode/mark_item_as_read'
 
   get 'cache_all_feeds' => 'subscriptions#cache_all_feeds', as: :cache_all_feeds
