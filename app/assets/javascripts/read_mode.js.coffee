@@ -2,11 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 #
-
-markItemAsRead = (id) ->
-  $.post 'mark_item_as_read',
-    article_id: id
-    (data) -> $('body').append "Successfully posted to the page."
+$ ->
+  get_json = (url) ->
+        $.getJSON "#{url}.json"
 
 window.ready = ( ->
   document.onkeypress = (evt) ->
@@ -14,14 +12,10 @@ window.ready = ( ->
     charCode = evt.keyCode || evt.which
     charStr = String.fromCharCode(charCode)
     if charStr == 'j'
-      article_id += 1
-      markItemAsRead(article_id)
+      console.log 'j'
     else if charStr == 'k'
-      article_id -= 1
-      markItemAsRead(article_id)
-    window.location.hash = "article-#{article_id}"
+      console.log 'k'
 
-  article_id = 0
 
 )();
 
