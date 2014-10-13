@@ -4,7 +4,11 @@ class ReadModeController < ApplicationController
   end
 
   def mark_item_as_read
-    render text: 'very well than'
+    if FeedItem.find(params[:article_id]).update_attributes read: true
+      render text: 'very well than'
+    else
+      render text: 'no soo good'
+    end
   end
 
   def get
