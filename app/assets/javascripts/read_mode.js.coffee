@@ -6,9 +6,8 @@ handle_new_data = (data) ->
 
 next_article = ->
   $.post 'mark_item_as_read',
-    article_id: $('#current_article #meta #article_id').html()
+    article_id: $('#current_article #meta #article_id').html(),
     (data) ->
-      $('body').append "Successfully posted to the page."
       get_new_article()
 
 get_new_article = ->
