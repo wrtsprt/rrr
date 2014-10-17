@@ -13,9 +13,7 @@ next_article = ->
 get_new_article = ->
   $.getJSON '/read_mode/get.json', handle_new_data
 
-$ ->
-  console.log 'doc ready'
-  get_new_article()
+$(document).on 'page:load', get_new_article
 
 window.ready = ( ->
   document.onkeypress = (evt) ->
