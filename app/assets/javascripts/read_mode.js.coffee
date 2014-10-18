@@ -1,4 +1,5 @@
 handle_new_data = (data) ->
+  update_stats()
   article = data[0]
   $('#current_article #title').html(article.title)
   $('#current_article #body').html(article.content)
@@ -13,7 +14,19 @@ next_article = ->
 get_new_article = ->
   $.getJSON '/read_mode/get.json', handle_new_data
 
-$(document).on 'page:load', get_new_article
+update_stats = ->
+  $.getJSON '/read_mode/stats.json', (data) ->
+    console.log 'got stats back'
+    console.dir data
+    console.log data.count
+    $('#unread_count').html(data.count)
+
+document_loaded = ->
+  console.log 'document loaded'
+  get_new_article()
+  update_stats()
+
+$(document).on 'page:load', document_loaded
 
 window.ready = ( ->
   document.onkeypress = (evt) ->

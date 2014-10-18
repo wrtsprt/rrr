@@ -17,4 +17,12 @@ class ReadModeController < ApplicationController
       format.json { render :json => @items.to_json }
     end
   end
+
+  def stats
+    @unread_count = FeedItem.unread.count
+    respond_to do |format|
+      format.json { render :json => { count: @unread_count }  }
+    end
+  end
+
 end
