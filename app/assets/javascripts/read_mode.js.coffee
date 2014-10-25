@@ -21,14 +21,7 @@ update_stats = ->
     console.log data.count
     $('#unread_count').html(data.count)
 
-document_loaded = ->
-  console.log 'document loaded'
-  get_new_article()
-  update_stats()
-
-$(document).on 'page:load', document_loaded
-
-window.ready = ( ->
+bind_navigation_keys = ->
   document.onkeypress = (evt) ->
     evt = evt || window.event
     charCode = evt.keyCode || evt.which
@@ -38,4 +31,12 @@ window.ready = ( ->
       next_article()
     else if charStr == 'k'
       console.log 'k'
-)();
+
+document_loaded = ->
+  console.log 'document loaded'
+  get_new_article()
+  update_stats()
+  bind_navigation_keys()
+
+$(document).on 'page:load', document_loaded
+$(document).ready(document_loaded)
