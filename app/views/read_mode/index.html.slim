@@ -1,13 +1,15 @@
 .row
-  .col-md-offset-2
-    .col-md-6
-      = "Stats"
-      #unread_count
-.row
-  .col-md-offset-2
-    .col-md-6
-      #current_article
-        #meta  style='display: none;'
-          #article_id
-        #title.h3
-        #body
+  .col-md-2
+    = "stats"
+    #unread_count
+  .col-md-6
+    #current_article
+      #meta  style='display: none;'
+        #article_id
+      #title.h3 style='display: inline;'
+      |&nbsp;&nbsp;
+      span#source
+        a original
+      #original
+      br
+      #body

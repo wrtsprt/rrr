@@ -4,6 +4,7 @@ handle_new_data = (data) ->
   $('#current_article #title').html(article.title)
   $('#current_article #body').html(article.content)
   $('#current_article #meta #article_id').html(article.id)
+  $('#current_article #source a').attr('href',article.url)
 
 next_article = ->
   $.post 'mark_item_as_read',
