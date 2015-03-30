@@ -15,11 +15,11 @@ body
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         - current_uri = request.env['PATH_INFO']
         ul.nav.navbar-nav
-          li class=(current_page?(controller: 'opml_import', action: 'index') ? 'active' : 'inactive')
+          li
             = link_to 'import', opml_import_index_path
-          li class=(current_page?(controller: 'subscriptions', action: 'index') ? 'active' : 'inactive')
+          li
             = link_to 'subscriptions', subscriptions_path
-          li class=(current_page?(controller: 'read_mode', action: 'index') || current_uri == '/' ? 'active' : 'inactive')
+          li
             = link_to 'read', read_mode_index_path
 
         ul.nav.navbar-nav.navbar-right
