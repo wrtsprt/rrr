@@ -8,22 +8,22 @@ html
   = csrf_meta_tags
 
 body
-  nav.navbar.navbar-default.navbar-fixed-top role="navigation"
-    .container-fluid
-      .navbar-header
-        a.navbar-brand href="/"  RRR
-      #bs-example-navbar-collapse-1.collapse.navbar-collapse
-        - current_uri = request.env['PATH_INFO']
-        ul.nav.navbar-nav
-          li
-            = link_to 'import', opml_import_index_path
-          li
-            = link_to 'subscriptions', subscriptions_path
-          li
-            = link_to 'read', read_mode_index_path
+  - if user_signed_in?
+    nav.navbar.navbar-default.navbar-fixed-top role="navigation"
+      .container-fluid
+        .navbar-header
+          a.navbar-brand href="/"  RRR
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          - current_uri = request.env['PATH_INFO']
+          ul.nav.navbar-nav
+            li
+              = link_to 'import', opml_import_index_path
+            li
+              = link_to 'subscriptions', subscriptions_path
+            li
+              = link_to 'read', read_mode_index_path
 
-        ul.nav.navbar-nav.navbar-right
-          - if user_signed_in?
+          ul.nav.navbar-nav.navbar-right
             li.dropdown
               a.dropdown-toggle data-toggle="dropdown" href="#"
                 span.glyphicon.glyphicon-user
@@ -37,8 +37,7 @@ body
                       .col-lg-12
                         p
                           =link_to 'logout', '/users/sign_out', method: :delete, class: 'btn btn-danger btn-block'
-          - else
-            = 'Go to signin'
+
 
   p class="notice"
     = notice
