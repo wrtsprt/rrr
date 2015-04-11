@@ -7,7 +7,7 @@ handle_new_data = (data) ->
   $('#current_article #source a').attr('href',article.url)
 
 next_article = ->
-  $.post 'mark_item_as_read',
+  $.post 'read_mode/mark_item_as_read',
     article_id: $('#current_article #meta #article_id').html(),
     (data) ->
       get_new_article()
