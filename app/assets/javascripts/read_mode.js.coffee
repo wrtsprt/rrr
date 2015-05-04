@@ -4,18 +4,23 @@ class @Reader
     console.log 'constructor called'
     @unread ||= new Array()
     @read ||= new Array()
+    @currentArticle ||= {}
 
   addData: (data) ->
     console.log 'addData called'
     console.dir data
-    @unread.push(data)
+    @unread.unshift(data)
 
-  nextArticle: ->
+  nextArticle: =>
     console.log 'nextArticle called'
     if @unread.length > 0
-      @read.push(@unread.pop())
+      @read.push(@currentArticle)
+      @currentArticle = @unread.pop()
     else
       console.log 'nothing left in unread'
+    @update_stats()
+    @fetchNewArticle()
+    @updateUi()
 
   previousArticle: ->
     console.log 'previousArticle called'
@@ -30,15 +35,17 @@ class @Reader
   unreadCount: =>
     @unread.length
 
-  handle_new_data: (data) =>
-    @update_stats()
-    article = data[0]
-    @addData(article)
+  updateUi: =>
+    article = @currentArticle
     $('#current_article #title').html(article.title)
     $('#current_article #body').html(article.content)
     $('#current_article #meta #article_id').html(article.id)
     $('#current_article #source a').attr('href',article.url)
     $('#debug-output #source').html(article)
+
+  handle_new_data: (data) =>
+    article = data[0]
+    @addData(article)
 
   next_article: =>
     @nextArticle()
@@ -47,7 +54,7 @@ class @Reader
       (data) =>
         @get_new_article()
 
-  get_new_article: =>
+  fetchNewArticle: =>
     $.getJSON '/read_mode/get.json', @handle_new_data
 
   update_stats: =>
@@ -73,9 +80,10 @@ class @Reader
 document_loaded = ->
   console.log 'document loaded'
   window.myReader = new Reader()
-  window.myReader.get_new_article()
+  window.myReader.fetchNewArticle()
   window.myReader.update_stats()
   window.myReader.bind_navigation_keys()
+  window.myReader.nextArticle()
 
 $(document).on 'page:load', document_loaded
 $(document).ready(document_loaded)
