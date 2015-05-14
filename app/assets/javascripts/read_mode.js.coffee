@@ -5,19 +5,9 @@ class @Reader
     @unread ||= new Array()
     @read ||= new Array()
     @currentArticle ||= {}
-
-  addData: (data) ->
-    console.log 'addData called'
-    console.dir data
-    @unread.unshift(data)
+    @loadedArticleIds = {}
 
   nextArticle: =>
-    console.log 'nextArticle called'
-    if @unread.length > 0
-      @read.push(@currentArticle)
-      @currentArticle = @unread.pop()
-    else
-      console.log 'nothing left in unread'
     @update_stats()
     @fetchNewArticle()
     @updateUi()
@@ -25,9 +15,11 @@ class @Reader
   previousArticle: ->
     console.log 'previousArticle called'
     if @read.length > 0
-      @unread.push(@read.pop())
+      @unread.push(@currentArticle)
+      @currentArticle = @read.pop()
     else
       console.log 'nothing left in read'
+    @updateUi()
 
   verifyBuffer: =>
     console.log 'verifyBuffer called'
@@ -36,6 +28,9 @@ class @Reader
     @unread.length
 
   updateUi: =>
+    console.log 'update UI'
+    unless @currentArticle
+      @currentArticle = @unread.pop()
     article = @currentArticle
     $('#current_article #title').html(article.title)
     $('#current_article #body').html(article.content)
@@ -58,18 +53,33 @@ class @Reader
     $('#debug_unread_count').html(@unread.length)
 
   handle_new_data: (data) =>
-    article = data[0]
-    @addData(article)
+    for article in data
+      console.log 'adding article to unread ' + article.title
 
-  next_article: =>
-    @nextArticle()
+      if @loadedArticleIds[article.id] == 1
+        console.log 'article already loaded'
+      else
+        @unread.unshift(article)
+        @loadedArticleIds[article.id] = 1
+
+  nextPressed: =>
+    console.log ' pressed next '
     $.post 'mark_item_as_read',
-      article_id: $('#current_article #meta #article_id').html(),
-      (data) =>
-        @get_new_article()
+      article_id: @currentArticle.id
+
+    if @unread.length > 0
+      console.log ' current article pushed to read: ' + @currentArticle.title
+      @read.push(@currentArticle)
+      @currentArticle = @unread.pop()
+      console.log ' new current article: '  + @currentArticle.title
+    else
+      console.log 'nothing left in unread'
+
+    @updateUi()
+    @fetchNewArticle()
 
   fetchNewArticle: =>
-    $.getJSON '/read_mode/get.json', @handle_new_data
+    $.getJSON '/read_mode/get.json?number=5', @handle_new_data
 
   update_stats: =>
     $('#buffered-count').html(@unreadCount())
@@ -86,7 +96,7 @@ class @Reader
       charStr = String.fromCharCode(charCode)
       if charStr == 'j'
         console.log 'j'
-        @next_article()
+        @nextPressed()
       else if charStr == 'k'
         console.log 'k'
         @previousArticle()
@@ -97,7 +107,7 @@ document_loaded = ->
   window.myReader.fetchNewArticle()
   window.myReader.update_stats()
   window.myReader.bind_navigation_keys()
-  window.myReader.nextArticle()
+  window.myReader.updateUi()
 
 $(document).on 'page:load', document_loaded
 $(document).ready(document_loaded)
