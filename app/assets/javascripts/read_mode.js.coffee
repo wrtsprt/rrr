@@ -43,6 +43,20 @@ class @Reader
     $('#current_article #source a').attr('href',article.url)
     $('#debug-output #source').html(article)
 
+    readArticles = ''
+    for article in @read
+      readArticles += '<li>' + article.title + ' </li>'
+
+    $('#read').html('<ul>' + readArticles + '</ul>')
+    $('#debug_read_count').html(@read.length)
+
+    unreadArticles = ''
+    for article in @unread
+      unreadArticles += '<li>' + article.title + ' </li>'
+
+    $('#unread').html('<ul>' + unreadArticles + '</ul>')
+    $('#debug_unread_count').html(@unread.length)
+
   handle_new_data: (data) =>
     article = data[0]
     @addData(article)

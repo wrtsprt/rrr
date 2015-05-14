@@ -13,3 +13,10 @@
       #original
       br
       #body
+.row.debug-info
+  .col-md-6
+    = 'read (<span id="debug_read_count"></span>)'.html_safe
+    #read
+  .col-md-6
+    = 'unread (<span id="debug_unread_count"></span>)'.html_safe
+    #unread
