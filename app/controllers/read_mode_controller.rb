@@ -12,7 +12,13 @@ class ReadModeController < ApplicationController
   end
 
   def get
-    @items = FeedItem.where(read: false).order(published_at: :asc).limit(1)
+    limit = if params[:number].present?
+      number = params[:number].to_i
+      number > 10 ? 10 : number
+    else
+      1
+    end
+    @items = FeedItem.where(read: false).order(published_at: :asc).limit(limit)
     respond_to do |format|
       format.json { render :json => @items.to_json }
     end
