@@ -7,9 +7,15 @@ class @Reader
     @currentArticle ||= {}
     @loadedArticleIds = {}
 
-  nextArticle: =>
-    @update_stats()
+  initializeReader: =>
     @fetchNewArticle()
+    @bind_navigation_keys()
+    @nextArticle()
+
+
+  nextArticle: =>
+    @fetchNewArticle()
+    @update_stats()
     @updateUi()
 
   previousArticle: ->
@@ -61,6 +67,7 @@ class @Reader
       else
         @unread.unshift(article)
         @loadedArticleIds[article.id] = 1
+    @updateUi()
 
   nextPressed: =>
     console.log ' pressed next '
@@ -84,9 +91,7 @@ class @Reader
   update_stats: =>
     $('#buffered-count').html(@unreadCount())
     $.getJSON '/read_mode/stats.json', (data) ->
-      console.log 'got stats back'
-      console.dir data
-      console.log data.count
+      console.log 'got stats?!'
       $('#unread_count').html(data.count)
 
   bind_navigation_keys: =>
@@ -103,11 +108,8 @@ class @Reader
 
 document_loaded = ->
   console.log 'document loaded'
-  window.myReader = new Reader()
-  window.myReader.fetchNewArticle()
-  window.myReader.update_stats()
-  window.myReader.bind_navigation_keys()
-  window.myReader.updateUi()
+  myReader = new Reader()
+  myReader.initializeReader()
 
 $(document).on 'page:load', document_loaded
 $(document).ready(document_loaded)
