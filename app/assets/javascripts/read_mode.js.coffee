@@ -71,7 +71,7 @@ class @Reader
 
   nextPressed: =>
     console.log ' pressed next '
-    $.post 'mark_item_as_read',
+    $.post 'read_mode/mark_item_as_read',
       article_id: @currentArticle.id
 
     if @unread.length > 0
