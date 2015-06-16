@@ -20,7 +20,7 @@ table class="table table-hover table-striped"
         td = subscription.name
         td = subscription.feed_url
         td = subscription.subscription_notifications.count != 0 ? subscription.subscription_notifications.count : ''
-        td = "<b>#{FeedItem.where(feed: subscription.feed_url, read: false).count}</b> (#{FeedItem.where(feed: subscription.feed_url).count})".html_safe
+        td = "<b>#{subscription.feed_items.where(read: false).count}</b> (#{subscription.feed_items.count})".html_safe
         td = link_to 'Cache', cache_feed_subscription_path(subscription)
         td = link_to 'Edit', edit_subscription_path(subscription)
         td = link_to 'Destroy', subscription, data: {:confirm => 'Are you sure?'}, :method => :delete

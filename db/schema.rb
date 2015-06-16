@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813153451) do
+ActiveRecord::Schema.define(version: 20150616173230) do
 
   create_table "feed_items", force: true do |t|
-    t.string   "feed"
     t.string   "title"
     t.string   "url"
     t.datetime "published_at"
@@ -23,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140813153451) do
     t.text     "content"
     t.boolean  "read",              default: false
     t.text     "sanitized_content"
+    t.integer  "subscription_id"
   end
 
   create_table "subscription_notifications", force: true do |t|

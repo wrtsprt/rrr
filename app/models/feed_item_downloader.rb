@@ -9,7 +9,7 @@ class FeedItemDownloader
         Rails.logger.debug "=> processing #{entry.url}"
         if feed_item.nil?
           feed_item = FeedItem.new(
-                           feed:         url,
+                           subscription: subscription,
                            title:        entry.title,
                            url:          entry.url,
                            published_at: entry.published.to_s,
