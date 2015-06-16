@@ -9,7 +9,7 @@ class @Reader
 
   initializeReader: =>
     @fetchNewArticle()
-    @bind_navigation_keys()
+    @bind_command_keys()
     @nextArticle()
 
 
@@ -94,7 +94,11 @@ class @Reader
       console.log 'got stats?!'
       $('#unread_count').html(data.count)
 
-  bind_navigation_keys: =>
+  openArticleInNewTab: =>
+    console.log 'open article in new tab'
+    win = window.open(@currentArticle.url).blur();
+
+  bind_command_keys: =>
     document.onkeypress = (evt) =>
       evt = evt || window.event
       charCode = evt.keyCode || evt.which
@@ -105,6 +109,9 @@ class @Reader
       else if charStr == 'k'
         console.log 'k'
         @previousArticle()
+      else if charStr == 'v'
+        console.log 'v'
+        @openArticleInNewTab()
 
 document_loaded = ->
   console.log 'document loaded'
