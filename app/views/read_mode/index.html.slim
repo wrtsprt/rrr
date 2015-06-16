@@ -1,8 +1,6 @@
 .row
   .col-md-2
-    = "stats"
-    #unread_count
-  .col-md-6
+  .col-md-8
     #current_article
       #meta  style='display: none;'
         #article_id
@@ -17,9 +15,10 @@
         a href="http://www.google.com" onclick="window.open(this.href,'_self');window.open('#','_blank');"
          Click Here
 .row.debug-info
-  .col-md-6
+  .col-md-2
+  .col-md-4
     = 'read (<span id="debug_read_count"></span>)'.html_safe
     #read
-  .col-md-6
+  .col-md-4
     = 'unread (<span id="debug_unread_count"></span>)'.html_safe
     #unread
