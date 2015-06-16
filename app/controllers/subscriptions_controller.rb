@@ -73,6 +73,16 @@ class SubscriptionsController < ApplicationController
     redirect_to action: :index
   end
 
+  def destroy_all_subscriptions
+    Subscription.find_each do |subscription|
+      subscription.destroy
+    end
+    respond_to do |format|
+      format.html { redirect_to subscriptions_url, notice: 'Subscriptions were successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_subscription

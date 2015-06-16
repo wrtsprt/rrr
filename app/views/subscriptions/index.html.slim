@@ -1,6 +1,7 @@
 .row
   .col-md-2.col-md-offset-10
     = link_to 'refresh all', cache_all_feeds_path, class: 'btn btn-primary btn-sm'
+    = link_to 'delete all', destroy_all_subscriptions_path, class: 'btn btn-danger btn-sm', method: :delete
 
 table class="table table-hover table-striped"
   thead
