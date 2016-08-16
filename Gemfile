@@ -56,6 +56,7 @@ gem 'rspec-rails', group:[:development, :test]
 
 gem 'opml_saw', :git => "git://github.com/feedbin/opml_saw.git", :branch => "master"
 gem 'feedjira'
+gem 'typhoeus'
 gem 'nokogiri'
 gem 'sanitize'
 
