@@ -6,12 +6,18 @@ class OpmlImportController < ApplicationController
   def import
     uploaded_io = params[:file]
     contents = nil
-    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+
+    uploads_dir = Rails.root.join('public', 'uploads')
+
+    FileUtils.mkdir_p(uploads_dir)
+
+    File.open(File.join(uploads_dir, uploaded_io.original_filename), 'wb') do |file|
       file.write(uploaded_io.read)
     end
-    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'r') do |file|
+    File.open(File.join(uploads_dir, uploaded_io.original_filename), 'r') do |file|
       contents = file.read
     end
+
     opml = OpmlSaw::Parser.new(contents)
     opml.parse
     @feeds = opml.feeds
