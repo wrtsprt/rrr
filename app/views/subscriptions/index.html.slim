@@ -10,6 +10,7 @@
         td = Subscription.count
         td = link_to 'New Subscription', new_subscription_path, class: 'btn btn-sm btn-primary'
         td = link_to 'OPML import', opml_import_index_path, class: 'btn btn-sm btn-primary'
+        / TODO: add a confirmation here
         td = link_to 'delete all', destroy_all_subscriptions_path, class: 'btn btn-danger btn-sm', method: :delete
         td
       tr
@@ -17,7 +18,9 @@
           b Articles
         td = "<b>#{FeedItem.where(read: false).count}</b> (#{FeedItem.count})".html_safe
         td = link_to 'download all', cache_all_feeds_path, class: 'btn btn-primary btn-sm'
+        / TODO: add mark all unread
         td = link_to 'delete all', destroy_all_articles_path, class: 'btn btn-danger btn-sm', method: :delete
+        td
 
 .row
   table class="table table-hover table-striped"
