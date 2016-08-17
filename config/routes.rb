@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get 'cache_all_feeds' => 'subscriptions#cache_all_feeds', as: :cache_all_feeds
   delete 'destroy_all_subscriptios' => 'subscriptions#destroy_all_subscriptions', as: :destroy_all_subscriptions
+  delete 'destroy_all_articles' => 'subscriptions#destroy_all_feed_items', as: :destroy_all_articles
 
   resources :subscriptions do
     member do
