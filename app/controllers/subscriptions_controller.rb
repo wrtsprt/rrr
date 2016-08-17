@@ -83,6 +83,14 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+  def destroy_all_feed_items
+    FeedItem.destroy_all
+    respond_to do |format|
+      format.html { redirect_to subscriptions_url, notice: 'Subscriptions were successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_subscription
