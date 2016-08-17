@@ -26,6 +26,6 @@ class OpmlImportController < ApplicationController
       Subscription.create name: feed[:title], feed_url: feed[:xml_url], http_url: feed[:html_url]
     end
 
-    render :imported
+    redirect_to subscriptions_path, notice: "#{@feeds.count} imported"
   end
 end
