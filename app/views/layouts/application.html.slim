@@ -37,10 +37,9 @@ body
                           =link_to 'logout', '/users/sign_out', method: :delete, class: 'btn btn-danger btn-block'
 
 
-  p class="notice"
-    = notice
-  p class="alert"
-    = alert
 
   div class="container"
+    .row
+      p = flash_messages
+
     = yield
