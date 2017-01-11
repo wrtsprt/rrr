@@ -43,6 +43,8 @@ gem 'slim-rails'
 gem 'bootstrap-sass'
 gem 'devise'
 
+gem 'acts-as-taggable-on', '~> 4.0'
+
 group :development do
   gem 'quiet_assets'
   gem 'better_errors'
