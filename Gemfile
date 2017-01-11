@@ -32,6 +32,8 @@ gem 'newrelic_rpm'
 # Use unicorn as the app server
 # gem 'unicorn'
 
+gem 'puma'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -45,9 +47,9 @@ gem 'devise'
 
 group :development do
   gem 'quiet_assets'
-#  gem 'jazz_hands'
   gem 'better_errors'
   gem "binding_of_caller"
+  gem 'pry-byebug'
 end
 
 gem 'rspec-rails', group:[:development, :test]
