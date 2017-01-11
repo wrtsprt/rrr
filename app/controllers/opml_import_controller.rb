@@ -21,9 +21,12 @@ class OpmlImportController < ApplicationController
     opml = OpmlSaw::Parser.new(contents)
     opml.parse
     @feeds = opml.feeds
-    Rails.logger.debug opml.feeds
     @feeds.each do |feed|
-      Subscription.create name: feed[:title], feed_url: feed[:xml_url], http_url: feed[:html_url]
+      subscription = Subscription.create name: feed[:title], feed_url: feed[:xml_url], http_url: feed[:html_url]
+      subscription.tag_list.add(feed[:tag])
+      Rails.logger.debug "--> #{feed[:tag]}"
+      subscription.save!
+
     end
 
     redirect_to subscriptions_path, notice: "#{@feeds.count} imported"
