@@ -8,33 +8,32 @@ html
   = csrf_meta_tags
 
 body
-  - if user_signed_in?
-    nav.navbar.navbar-default.navbar-fixed-top role="navigation"
-      .container-fluid
-        .navbar-header
-          a.navbar-brand href="/"  RRR
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          - current_uri = request.env['PATH_INFO']
-          ul.nav.navbar-nav
-            li
-              = link_to 'subscriptions', subscriptions_path
-            li
-              = link_to 'read', read_mode_index_path
+  nav.navbar.navbar-default.navbar-fixed-top role="navigation"
+    .container-fluid
+      .navbar-header
+        a.navbar-brand href="/"  RRR
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        - current_uri = request.env['PATH_INFO']
+        ul.nav.navbar-nav
+          li
+            = link_to 'subscriptions', subscriptions_path
+          li
+            = link_to 'read', read_mode_index_path
 
-          ul.nav.navbar-nav.navbar-right
-            li.dropdown
-              a.dropdown-toggle data-toggle="dropdown" href="#"
-                span.glyphicon.glyphicon-user
-                |  
-                strong= current_user.email
-                span.glyphicon.glyphicon-chevron-down
-              ul.dropdown-menu
-                li
-                  .navbar-login.navbar-login-session
-                    .row
-                      .col-lg-12
-                        p
-                          =link_to 'logout', '/users/sign_out', method: :delete, class: 'btn btn-danger btn-block'
+        ul.nav.navbar-nav.navbar-right
+          li.dropdown
+            a.dropdown-toggle data-toggle="dropdown" href="#"
+              span.glyphicon.glyphicon-user
+              |  
+              strong= 'current_user.email'
+              span.glyphicon.glyphicon-chevron-down
+            ul.dropdown-menu
+              li
+                .navbar-login.navbar-login-session
+                  .row
+                    .col-lg-12
+                      p
+                        =link_to 'logout', '/users/sign_out', method: :delete, class: 'btn btn-danger btn-block'
 
 
 
