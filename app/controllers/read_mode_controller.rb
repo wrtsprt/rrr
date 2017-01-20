@@ -16,11 +16,24 @@ class ReadModeController < ApplicationController
       number = params[:number].to_i
       number > 10 ? 10 : number
     else
-      1
+      5
     end
-    @items = FeedItem.where(read: false).order(published_at: :asc).limit(limit)
+
+    subscription_query= Subscription.where('1 == 1')
+    if params[:tag].present?
+      subscription_query = subscription_query.tagged_with(params[:tag])
+    end
+
+    feed_item_query = FeedItem.where(read: false)
+    if params[:tag].present?
+      subscription_ids = Subscription.tagged_with(params[:tag]).ids
+      feed_item_query = feed_item_query.where(subscription_id: subscription_ids)
+    end
+    @items = feed_item_query.order(published_at: :asc).limit(limit)
+
+    response = { count: @items.count, items: @items }
     respond_to do |format|
-      format.json { render :json => @items.to_json }
+      format.json { render :json => response.to_json }
     end
   end
 
