@@ -59,6 +59,7 @@ class @Reader
     $('#debug_unread_count').html(@unread.length)
 
   handle_new_data: (data) =>
+    data = data.items
     for article in data
       console.log 'adding article to unread ' + article.title
 
