@@ -45,7 +45,7 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.1.1.1)
+    bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
     builder (3.2.2)
     byebug (9.0.6)
@@ -207,7 +207,7 @@ DEPENDENCIES
   acts-as-taggable-on (~> 4.0)
   better_errors
   binding_of_caller
-  bootstrap-sass
+  bootstrap-sass (= 3.2.0)
   coffee-rails (~> 4.0.0)
   devise
   feedjira
