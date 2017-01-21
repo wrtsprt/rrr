@@ -8,37 +8,41 @@ html
   = csrf_meta_tags
 
 body
-  nav.navbar.navbar-default.navbar-fixed-top role="navigation"
-    .container-fluid
-      .navbar-header
-        a.navbar-brand href="/"  RRR
-      #bs-example-navbar-collapse-1.collapse.navbar-collapse
-        - current_uri = request.env['PATH_INFO']
-        ul.nav.navbar-nav
-          li
-            = link_to 'subscriptions', subscriptions_path
-          li
-            = link_to 'read', read_mode_index_path
-
-        ul.nav.navbar-nav.navbar-right
-          li.dropdown
-            a.dropdown-toggle data-toggle="dropdown" href="#"
-              span.glyphicon.glyphicon-user
-              |  
-              strong= 'current_user.email'
-              span.glyphicon.glyphicon-chevron-down
-            ul.dropdown-menu
-              li
-                .navbar-login.navbar-login-session
-                  .row
-                    .col-lg-12
-                      p
-                        =link_to 'logout', '/users/sign_out', method: :delete, class: 'btn btn-danger btn-block'
-
-
-
-  div class="container"
+  .container
     .row
-      p = flash_messages
+      .col-sm-1
+        nav.navbar.navbar-default.sidebar role="navigation"
+          .container-fluid
+            .navbar-header
+              button.navbar-toggle data-target="#bs-sidebar-navbar-collapse-1" data-toggle="collapse" type="button"
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            #bs-sidebar-navbar-collapse-1.collapse.navbar-collapse
+              ul.nav.navbar-nav
+                li
+                  = link_to read_mode_index_path(tag: 'tech')
+                    | tech
+                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
+                li
+                  = link_to read_mode_index_path(tag: 'lifehacker')
+                    | lifehacker
+                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
+                li
+                  = link_to read_mode_index_path(tag: 'rest')
+                    | rest
+                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
+                li.dropdown
+                  a.dropdown-toggle data-toggle="dropdown" href="#"
+                    | Tools
+                    span.caret
+                    span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-user style="font-size:16px;"
+                  ul.dropdown-menu.forAnimate role="menu"
+                    li
+                      = link_to 'subscriptions', subscriptions_path
 
-    = yield
+      .col-sm-11
+        p = flash_messages
+
+        = yield
