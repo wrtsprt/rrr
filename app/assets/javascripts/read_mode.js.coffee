@@ -7,6 +7,8 @@ class @Reader
     @currentArticle ||= {}
     @loadedArticleIds = {}
 
+    @tag = $('#reader').data('tag') || ""
+
   initializeReader: =>
     @fetchNewArticle()
     @bind_command_keys()
@@ -88,13 +90,18 @@ class @Reader
     @fetchNewArticle()
 
   fetchNewArticle: =>
-    $.getJSON '/read_mode/get.json?number=5', @handle_new_data
+    $.getJSON '/read_mode/get.json?number=5&tag=' + @tag || "", @handle_new_data
 
   update_stats: =>
     $('#buffered-count').html(@unreadCount())
     $.getJSON '/read_mode/stats.json', (data) ->
-      console.log 'got stats?!'
       $('#unread_count').html(data.count)
+    $.getJSON '/read_mode/stats.json?tag=tech', (data) ->
+      $('#tech-count').html('(' + data.count + ')')
+    $.getJSON '/read_mode/stats.json?tag=lifehacker', (data) ->
+      $('#lifehacker-count').html('(' + data.count + ')')
+    $.getJSON '/read_mode/stats.json?tag=rest', (data) ->
+      $('#rest-count').html('(' + data.count + ')')
 
   openArticleInNewTab: =>
     console.log 'open article in new tab'

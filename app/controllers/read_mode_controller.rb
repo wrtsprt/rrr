@@ -1,6 +1,12 @@
 class ReadModeController < ApplicationController
   def index
     @items = FeedItem.where(read: false).order(published_at: :asc)
+
+    if params[:tag].present?
+
+      @tag = params[:tag] || ""
+
+    end
   end
 
   def mark_item_as_read
