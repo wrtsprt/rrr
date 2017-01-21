@@ -30,7 +30,7 @@ class ReadModeController < ApplicationController
       subscription_query = subscription_query.tagged_with(params[:tag])
     end
 
-    feed_item_query = FeedItem.where(read: false)
+    feed_item_query = FeedItem.unread
     if params[:tag].present?
       subscription_ids = Subscription.tagged_with(params[:tag]).ids
       feed_item_query = feed_item_query.where(subscription_id: subscription_ids)
