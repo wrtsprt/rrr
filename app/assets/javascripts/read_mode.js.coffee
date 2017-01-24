@@ -72,6 +72,7 @@ class @Reader
         @unread.unshift(article)
         @loadedArticleIds[article.id] = 1
     @updateUi()
+    @update_stats()
 
   nextPressed: =>
     console.log ' pressed next '
