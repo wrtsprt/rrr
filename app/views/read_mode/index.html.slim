@@ -1,6 +1,5 @@
 .row#reader data-tag=@tag
-  .col-md-2
-  .col-md-8
+  .col-md-8.col-md-offset-2
     #current_article
       #meta  style='display: none;'
         #article_id
@@ -15,10 +14,9 @@
         a href="http://www.google.com" onclick="window.open(this.href,'_self');window.open('#','_blank');"
          Click Here
 .row.debug-info
-  .col-md-2
-  .col-md-4
+  .col-md-4.col-md-offset-2
     = 'read (<span id="debug_read_count"></span>)'.html_safe
     #read
-  .col-md-4
+  .col-md-4.col-md-offset-6
     = 'unread (<span id="debug_unread_count"></span>)'.html_safe
     #unread
