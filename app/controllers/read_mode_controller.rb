@@ -37,7 +37,20 @@ class ReadModeController < ApplicationController
     end
     @items = feed_item_query.order(published_at: :asc).limit(limit)
 
-    response = { count: @items.count, items: @items }
+
+    @items_representation = @items.map do |item|
+      representation = {
+          title: item.title,
+          published_at: item.published_at,
+          id: item.id,
+          url: item.url,
+          content: item.content,
+          subscription_name: item.subscription.name
+      }
+      representation
+    end
+
+    response = { count: @items_representation.count, items: @items_representation }
     respond_to do |format|
       format.json { render :json => response.to_json }
     end
