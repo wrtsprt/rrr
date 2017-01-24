@@ -11,6 +11,12 @@ html
     .container-fluid
       .row
         .col-sm-3.col-md-2.sidebar
+          - if Rails.env == 'real'
+            p.alert-danger
+              | real data
+          - if Rails.env == 'development'
+            p.alert-success
+              | development
           ul.nav.nav-sidebar
             li
               = link_to read_mode_index_path(tag: 'tech')
