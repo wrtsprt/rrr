@@ -39,6 +39,7 @@ class @Reader
     unless @currentArticle
       @currentArticle = @unread.pop()
     article = @currentArticle
+    return unless article
     $('#current_article #title').html(article.title)
     $('#current_article #subscription_name').html(article.subscription_name)
     $('#current_article #body').html(article.content)
