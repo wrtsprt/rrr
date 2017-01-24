@@ -21,14 +21,17 @@ html
             li
               = link_to read_mode_index_path(tag: 'tech')
                 | tech
+                span#tech-count
                 span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
             li
               = link_to read_mode_index_path(tag: 'lifehacker')
                 | lifehacker
+                span#lifehacker-count
                 span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
             li
               = link_to read_mode_index_path(tag: 'rest')
                 | rest
+                span#rest-count
                 span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
             li
               = link_to subscriptions_path
