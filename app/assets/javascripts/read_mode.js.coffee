@@ -4,7 +4,6 @@ class @Reader
     console.log 'constructor called'
     @unread ||= new Array()
     @read ||= new Array()
-    @currentArticle ||= {}
     @loadedArticleIds = {}
 
     @tag = $('#reader').data('tag') || ""
