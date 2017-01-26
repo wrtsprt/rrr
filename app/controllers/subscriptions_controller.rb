@@ -91,6 +91,14 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+  def mark_all_read
+    FeedItem.update_all read: true
+    respond_to do |format|
+      format.html { redirect_to subscriptions_url, notice: 'All marked as read' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_subscription
