@@ -45,6 +45,8 @@ gem 'devise'
 
 gem 'acts-as-taggable-on', '~> 4.0'
 
+gem 'sidekiq'
+
 group :development do
   gem 'quiet_assets'
   gem 'better_errors'
