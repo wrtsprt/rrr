@@ -7,42 +7,38 @@ html
   = javascript_include_tag "application"
   = csrf_meta_tags
 
-body
-  - if user_signed_in?
-    nav.navbar.navbar-default.navbar-fixed-top role="navigation"
-      .container-fluid
-        .navbar-header
-          a.navbar-brand href="/"  RRR
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          - current_uri = request.env['PATH_INFO']
-          ul.nav.navbar-nav
+  body
+    .container-fluid
+      .row
+        .col-sm-3.col-md-2.sidebar
+          - if Rails.env == 'real'
+            p.alert-danger
+              | real data
+          - if Rails.env == 'development'
+            p.alert-success
+              | development
+          ul.nav.nav-sidebar
             li
-              = link_to 'import', opml_import_index_path
+              = link_to read_mode_index_path(tag: 'tech')
+                | tech
+                span#tech-count
+                span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
             li
-              = link_to 'subscriptions', subscriptions_path
+              = link_to read_mode_index_path(tag: 'lifehacker')
+                | lifehacker
+                span#lifehacker-count
+                span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
             li
-              = link_to 'read', read_mode_index_path
+              = link_to read_mode_index_path(tag: 'rest')
+                | rest
+                span#rest-count
+                span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
+            li
+              = link_to subscriptions_path
+                | subscriptions
+                span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
+        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
 
-          ul.nav.navbar-nav.navbar-right
-            li.dropdown
-              a.dropdown-toggle data-toggle="dropdown" href="#"
-                span.glyphicon.glyphicon-user
-                |  
-                strong= current_user.email
-                span.glyphicon.glyphicon-chevron-down
-              ul.dropdown-menu
-                li
-                  .navbar-login.navbar-login-session
-                    .row
-                      .col-lg-12
-                        p
-                          =link_to 'logout', '/users/sign_out', method: :delete, class: 'btn btn-danger btn-block'
+          = yield
 
 
-  p class="notice"
-    = notice
-  p class="alert"
-    = alert
-
-  div class="container"
-    = yield

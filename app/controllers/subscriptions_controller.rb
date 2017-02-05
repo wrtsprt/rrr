@@ -83,6 +83,22 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+  def destroy_all_feed_items
+    FeedItem.destroy_all
+    respond_to do |format|
+      format.html { redirect_to subscriptions_url, notice: 'Subscriptions were successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def mark_all_read
+    FeedItem.update_all read: true
+    respond_to do |format|
+      format.html { redirect_to subscriptions_url, notice: 'All marked as read' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_subscription
@@ -91,6 +107,6 @@ class SubscriptionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subscription_params
-      params.require(:subscription).permit(:name, :feed_url, :http_url)
+      params.require(:subscription).permit(:name, :feed_url, :http_url, :tag_list)
     end
 end

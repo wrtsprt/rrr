@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'cache_all_feeds' => 'subscriptions#cache_all_feeds', as: :cache_all_feeds
   delete 'destroy_all_subscriptios' => 'subscriptions#destroy_all_subscriptions', as: :destroy_all_subscriptions
+  delete 'destroy_all_articles' => 'subscriptions#destroy_all_feed_items', as: :destroy_all_articles
+  delete 'mark_all_read' => 'subscriptions#mark_all_read', as: :mark_all_read
 
   resources :subscriptions do
     member do
@@ -25,4 +27,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'read_mode#index'
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end

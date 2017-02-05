@@ -1,12 +1,10 @@
 source 'https://rubygems.org'
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.1'
+gem 'rails', '~> 4.1.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -23,8 +21,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
 
 gem 'newrelic_rpm'
 
@@ -34,6 +30,8 @@ gem 'newrelic_rpm'
 # Use unicorn as the app server
 # gem 'unicorn'
 
+gem 'puma'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -42,20 +40,28 @@ gem 'newrelic_rpm'
 
 
 gem 'slim-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '3.3.6'
 gem 'devise'
+
+gem 'acts-as-taggable-on', '~> 4.0'
+
+gem 'sidekiq'
+
+gem 'rails-html-sanitizer'
 
 group :development do
   gem 'quiet_assets'
-#  gem 'jazz_hands'
   gem 'better_errors'
   gem "binding_of_caller"
+  gem 'pry-byebug'
+  gem 'spring'
 end
 
 gem 'rspec-rails', group:[:development, :test]
 
 gem 'opml_saw', :git => "git://github.com/feedbin/opml_saw.git", :branch => "master"
 gem 'feedjira'
+gem 'typhoeus'
 gem 'nokogiri'
 gem 'sanitize'
 

@@ -1,6 +1,12 @@
 class ReadModeController < ApplicationController
   def index
     @items = FeedItem.where(read: false).order(published_at: :asc)
+
+    if params[:tag].present?
+
+      @tag = params[:tag] || ""
+
+    end
   end
 
   def mark_item_as_read
@@ -16,16 +22,53 @@ class ReadModeController < ApplicationController
       number = params[:number].to_i
       number > 10 ? 10 : number
     else
-      1
+      5
     end
-    @items = FeedItem.where(read: false).order(published_at: :asc).limit(limit)
+
+    subscription_query= Subscription.where('1 == 1')
+    if params[:tag].present?
+      subscription_query = subscription_query.tagged_with(params[:tag])
+    end
+
+    feed_item_query = FeedItem.unread
+    if params[:tag].present?
+      subscription_ids = Subscription.tagged_with(params[:tag]).ids
+      feed_item_query = feed_item_query.where(subscription_id: subscription_ids)
+    end
+    @items = feed_item_query.order(published_at: :asc).limit(limit)
+
+
+    @items_representation = @items.map do |item|
+      representation = {
+          title: item.title,
+          published_at: item.published_at,
+          id: item.id,
+          url: item.url,
+          content: item.sanitized_content,
+          subscription_name: item.subscription.name
+      }
+      representation
+    end
+
+    response = { count: @items_representation.count, items: @items_representation }
     respond_to do |format|
-      format.json { render :json => @items.to_json }
+      format.json { render :json => response.to_json }
     end
   end
 
   def stats
-    @unread_count = FeedItem.unread.count
+    subscription_query= Subscription.where('1 == 1')
+    if params[:tag].present?
+      subscription_query = subscription_query.tagged_with(params[:tag])
+    end
+
+    feed_item_query = FeedItem.unread
+    if params[:tag].present?
+      subscription_ids = Subscription.tagged_with(params[:tag]).ids
+      feed_item_query = feed_item_query.where(subscription_id: subscription_ids)
+    end
+    @unread_count = feed_item_query.count
+
     respond_to do |format|
       format.json { render :json => { count: @unread_count }  }
     end

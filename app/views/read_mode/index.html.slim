@@ -1,24 +1,17 @@
 .row
-  .col-md-2
-  .col-md-8
-    #current_article
-      #meta  style='display: none;'
-        #article_id
-      #title.h3 style='display: inline;'
-      |&nbsp;&nbsp;
-      span#source
-        a original
-      #original
-      br
-      #body
-      #read-later-link
-        a href="http://www.google.com" onclick="window.open(this.href,'_self');window.open('#','_blank');"
-         Click Here
-.row.debug-info
-  .col-md-2
-  .col-md-4
-    = 'read (<span id="debug_read_count"></span>)'.html_safe
-    #read
-  .col-md-4
-    = 'unread (<span id="debug_unread_count"></span>)'.html_safe
-    #unread
+  .col-xs-12.col-xs-offset-2.col-sm-6.col-sm-offset-1
+    #reader data-tag=@tag
+      #current_article
+        #meta  style='display: none;'
+          #article_id
+        #title.h3 style='display: inline;'
+        |&nbsp;&nbsp;
+        span#source
+          a original
+        p#subscription_name
+        br
+        p#body
+        #read-later-link
+          a href="http://www.google.com" onclick="window.open(this.href,'_self');window.open('#','_blank');"
+           Click Here
+

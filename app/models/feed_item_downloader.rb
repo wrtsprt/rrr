@@ -3,7 +3,10 @@ class FeedItemDownloader
   def self.cache_feed(subscription)
     url = subscription.feed_url
 
-    on_success = Proc.new do |url, feed|
+    feed_xml = Typhoeus.get(url, followlocation: true).response_body
+    begin
+      feed = Feedjira::Feed.parse feed_xml
+
       feed.entries.each do |entry|
         feed_item = FeedItem.find_by_url(entry.url)
         Rails.logger.debug "=> processing #{entry.url}"
@@ -13,25 +16,33 @@ class FeedItemDownloader
                            title:        entry.title,
                            url:          entry.url,
                            published_at: entry.published.to_s,
-                           content:      entry.summary
+                           content:      entry.summary,
+                           sanitize_content: FeedItemDownloader.sanitize_content(entry.summary)
                            )
           feed_item.save
         end
       end
-    end
+    rescue Exception => e
+      Rails.logger.error "Error fetching for subscription #{subscription.id}"
+      Rails.logger.error "#{subscription.name}: #{url}"
+      Rails.logger.error e
 
-    on_failure = Proc.new do |curl, err|
-      Rails.logger.error "Fetching the feed went wrong; #{curl}, #{err}"
-      begin
-        subscription.subscription_notifications << SubscriptionNotification.create!(type: :feed_not_downloadable, body: 'The feed_url was not reachable')
-        subscription.save!
-      rescue e
-        Rails.logger.error e
-        raise e
-      end
-    end
+      message = "Error fetching for subscription #{subscription.id}\n"
+      message += "#{subscription.name}: #{url}\n"
+      message += "#{e.message}\n"
+      message += "#{e.backtrace}\n"
 
-    Feedjira::Feed.fetch_and_parse(url, on_success: on_success, on_failure: on_failure)
+      subscription.subscription_notifications.create!(body: message)
+    end
+  end
+
+  def self.sanitize_content(dangerous_content)
+    scrubber = Rails::Html::TargetScrubber.new
+    scrubber.tags = ['style']
+
+    html_fragment = Loofah.fragment(dangerous_content)
+    html_fragment.scrub!(scrubber)
+    html_fragment.to_s # => "<a></a>"
   end
 
 end
