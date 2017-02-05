@@ -11,14 +11,18 @@ class FeedItemDownloader
         feed_item = FeedItem.find_by_url(entry.url)
         Rails.logger.debug "=> processing #{entry.url}"
         if feed_item.nil?
+
+          content = entry.content.present? ? entry.content : entry.summary
+
           feed_item = FeedItem.new(
                            subscription: subscription,
                            title:        entry.title,
                            url:          entry.url,
                            published_at: entry.published.to_s,
-                           content:      entry.summary,
-                           sanitized_content: FeedItemDownloader.sanitize_content(entry.summary)
+                           content:      content,
+                           sanitized_content: FeedItemDownloader.sanitize_content(content)
                            )
+
           feed_item.save
         end
       end
