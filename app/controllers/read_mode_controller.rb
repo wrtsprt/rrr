@@ -44,7 +44,7 @@ class ReadModeController < ApplicationController
           published_at: item.published_at,
           id: item.id,
           url: item.url,
-          content: item.content,
+          content: item.sanitized_content,
           subscription_name: item.subscription.name
       }
       representation
