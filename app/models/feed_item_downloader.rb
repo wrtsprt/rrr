@@ -17,7 +17,7 @@ class FeedItemDownloader
                            url:          entry.url,
                            published_at: entry.published.to_s,
                            content:      entry.summary,
-                           sanitize_content: FeedItemDownloader.sanitize_content(entry.summary)
+                           sanitized_content: FeedItemDownloader.sanitize_content(entry.summary)
                            )
           feed_item.save
         end
