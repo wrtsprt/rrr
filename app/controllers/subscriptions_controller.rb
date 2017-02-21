@@ -73,6 +73,11 @@ class SubscriptionsController < ApplicationController
     redirect_to action: :index
   end
 
+  def enqueue_cache_all_feeds
+    RefreshAllSubscriptionsWorker.perform_async
+    redirect_to action: :index
+  end
+
   def destroy_all_subscriptions
     Subscription.find_each do |subscription|
       subscription.destroy
