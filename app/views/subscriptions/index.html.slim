@@ -15,7 +15,7 @@
         td
           b Articles
         td = "<b>#{FeedItem.where(read: false).count}</b> (#{FeedItem.count})".html_safe
-        td = link_to 'download all', cache_all_feeds_path, class: 'btn btn-primary btn-sm'
+        td = link_to 'download all', enqueue_cache_all_feeds_path, class: 'btn btn-primary btn-sm'
         td = link_to 'mark all read', mark_all_read_path, class: 'btn btn-danger btn-sm', method: :delete
         td = link_to 'delete all', destroy_all_articles_path, class: 'btn btn-danger btn-sm', method: :delete
         td

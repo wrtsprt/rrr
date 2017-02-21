@@ -37,6 +37,10 @@ html
               = link_to subscriptions_path
                 | subscriptions
                 span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
+            li
+              = link_to enqueue_cache_all_feeds_path
+                | download all
+                span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-refresh style="font-size:16px;"
         .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
 
           = yield
