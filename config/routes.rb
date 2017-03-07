@@ -30,5 +30,6 @@ Rails.application.routes.draw do
   root 'read_mode#index'
 
   require 'sidekiq/web'
+  require 'sidekiq/cron/web'
   mount Sidekiq::Web => '/sidekiq'
 end
