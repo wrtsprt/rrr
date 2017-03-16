@@ -1,0 +1,19 @@
+h1 Listing subscription_notifications
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @subscription_notifications.each do |subscription_notification|
+      tr
+        td = link_to 'Show', subscription_notification
+        td = link_to 'Edit', edit_subscription_notification_path(subscription_notification)
+        td = link_to 'Destroy', subscription_notification, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Subscription notification', new_subscription_notification_path
