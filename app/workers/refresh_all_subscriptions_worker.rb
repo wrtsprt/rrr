@@ -7,3 +7,6 @@ class RefreshAllSubscriptionsWorker
     end
   end
 end
+
+
+Sidekiq::Cron::Job.create(name: 'Refresh all worker', cron: '*/30 * * * *', class: 'RefreshAllSubscriptionsWorker')

@@ -46,6 +46,7 @@ gem 'devise'
 gem 'acts-as-taggable-on', '~> 4.0'
 
 gem 'sidekiq'
+gem 'sidekiq-cron'
 
 gem 'rails-html-sanitizer'
 
