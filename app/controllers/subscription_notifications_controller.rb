@@ -4,7 +4,7 @@ class SubscriptionNotificationsController < ApplicationController
   # GET /subscription_notifications
   # GET /subscription_notifications.json
   def index
-    @subscription_notifications = SubscriptionNotification.all
+    @subscription_notifications = SubscriptionNotification.where(subscription_id: params[:subscription_id]).all
   end
 
   # GET /subscription_notifications/1
@@ -69,6 +69,6 @@ class SubscriptionNotificationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subscription_notification_params
-      params[:subscription_notification]
+      params[:subscription_notification].permit(:subscription_id)
     end
 end

@@ -3,6 +3,7 @@ h1 Listing subscription_notifications
 table
   thead
     tr
+      th Body
       th
       th
       th
@@ -10,6 +11,7 @@ table
   tbody
     - @subscription_notifications.each do |subscription_notification|
       tr
+        td = subscription_notification.body.gsub(/\n/, '<br />').html_safe
         td = link_to 'Show', subscription_notification
         td = link_to 'Edit', edit_subscription_notification_path(subscription_notification)
         td = link_to 'Destroy', subscription_notification, data: {:confirm => 'Are you sure?'}, :method => :delete
