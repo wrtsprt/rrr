@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subscription_notifications
   get 'feed_item/show/:id' => 'feed_item#show', as: :feed_item
 
   get 'feed_item/clean'
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   delete 'mark_all_read' => 'subscriptions#mark_all_read', as: :mark_all_read
 
   resources :subscriptions do
+    resources :subscription_notifications
     member do
       get 'cache_feed'
     end

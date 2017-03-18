@@ -39,7 +39,7 @@
           td = subscription.name
           td = subscription.feed_url
           td = subscription.tag_list
-          td = subscription.subscription_notifications.count != 0 ? subscription.subscription_notifications.count : ''
+          td = subscription.subscription_notifications.count != 0 ? link_to(subscription.subscription_notifications.count, subscription_subscription_notifications_path(subscription)) : ''
           td = "<b>#{subscription.feed_items.where(read: false).count}</b> (#{subscription.feed_items.count})".html_safe
           td = link_to 'Download', cache_feed_subscription_path(subscription)
           td = link_to 'Edit', edit_subscription_path(subscription)
