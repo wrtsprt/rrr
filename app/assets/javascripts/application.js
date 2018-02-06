@@ -11,9 +11,10 @@
 // about supported directives.
 //
 //= require turbolinks
-//= require_tree .
 
 // Loads all Bootstrap javascripts
 //= require jquery3
 //= require popper
 //= require bootstrap
+
+//= require_tree .
