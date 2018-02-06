@@ -41,8 +41,11 @@
           td = subscription.tag_list
           td = subscription.subscription_notifications.count != 0 ? link_to(subscription.subscription_notifications.count, subscription_subscription_notifications_path(subscription)) : ''
           td = "<b>#{subscription.feed_items.where(read: false).count}</b> (#{subscription.feed_items.count})".html_safe
-          td = link_to 'Download', cache_feed_subscription_path(subscription)
-          td = link_to 'Edit', edit_subscription_path(subscription)
-          td = link_to 'Destroy', subscription, data: {:confirm => 'Are you sure?'}, :method => :delete
+          td = link_to cache_feed_subscription_path(subscription) do
+            span.glyphicon.glyphicon-refresh
+          td = link_to edit_subscription_path(subscription) do
+            span.glyphicon.glyphicon-pencil
+          td = link_to subscription, data: {:confirm => 'Are you sure?'}, :method => :delete
+            span.glyphicon.glyphicon-remove style="color: red"
 
 .row
