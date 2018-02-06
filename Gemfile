@@ -1,14 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.1'
+gem 'rails', '= 5.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+#
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -40,10 +39,10 @@ gem 'puma'
 
 
 gem 'slim-rails'
-gem 'bootstrap-sass', '3.3.6'
+gem 'bootstrap', '~> 4.0.0'
 gem 'devise'
 
-gem 'acts-as-taggable-on', '~> 4.0'
+gem 'acts-as-taggable-on'
 
 gem 'sidekiq'
 gem 'sidekiq-cron'
@@ -51,7 +50,6 @@ gem 'sidekiq-cron'
 gem 'rails-html-sanitizer'
 
 group :development do
-  gem 'quiet_assets'
   gem 'better_errors'
   gem "binding_of_caller"
   gem 'pry-byebug'
@@ -60,7 +58,7 @@ end
 
 gem 'rspec-rails', group:[:development, :test]
 
-gem 'opml_saw', :git => "git://github.com/feedbin/opml_saw.git", :branch => "master"
+gem 'opml_saw', :git => "https://github.com/feedbin/opml_saw.git", :branch => "master"
 gem 'feedjira'
 gem 'typhoeus'
 gem 'nokogiri'
