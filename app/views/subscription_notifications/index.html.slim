@@ -1,4 +1,12 @@
 h1 Listing subscription_notifications
+table class="table table-hover table-striped"
+  tbody
+    tr
+      td
+        b Subscriptions Notifications
+      td = @subscription_notifications.count
+      td = link_to 'delete all', destroy_all_subscription_notifications_subscription_subscription_notifications_path, class: 'btn btn-danger btn-sm', method: :delete
+      td
 
 table
   thead

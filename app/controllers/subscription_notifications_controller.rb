@@ -61,6 +61,17 @@ class SubscriptionNotificationsController < ApplicationController
     end
   end
 
+  def destroy_all_subscription_notifications
+    @subscription = Subscription.find(params[:subscription_id])
+    @subscription.subscription_notifications.find_each do |subscription_notification|
+      subscription_notification.destroy
+    end
+    respond_to do |format|
+      format.html { redirect_to subscriptions_url, notice: 'Subscriptions notifications were successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_subscription_notification

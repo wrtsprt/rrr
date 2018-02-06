@@ -18,7 +18,12 @@ Rails.application.routes.draw do
   delete 'mark_all_read' => 'subscriptions#mark_all_read', as: :mark_all_read
 
   resources :subscriptions do
-    resources :subscription_notifications
+    resources :subscription_notifications do
+      collection do
+        delete 'destroy_all_subscription_notifications'
+      end
+    end
+
     member do
       get 'cache_feed'
     end
