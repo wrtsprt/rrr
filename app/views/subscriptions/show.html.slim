@@ -13,6 +13,19 @@ p
   strong Tag list:
   = @subscription.tag_list
 
-= link_to 'Edit', edit_subscription_path(@subscription)
+= link_to "Edit", edit_subscription_path(@subscription)
 '|
 = link_to 'Back', subscriptions_path
+
+p
+
+table class="table table-hover table-striped"
+  tbody
+    tr
+      td Title
+      td Published At
+    - @subscription.feed_items.unread.each do |item|
+      tr
+        td = link_to feed_item_path(item) do
+          = item.title
+        td = item.published_at
