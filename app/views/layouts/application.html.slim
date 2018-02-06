@@ -10,38 +10,38 @@ html
   body
     .container-fluid
       .row
-        .col-sm-3.col-md-2.sidebar
+        nav.col-sm-3.col-md-2.hidden-xs-down.bg-faded.sidebar
           - if Rails.env == 'real'
             p.alert-danger
               | real data
           - if Rails.env == 'development'
             p.alert-success
               | development
-          ul.nav.nav-sidebar
-            li
-              = link_to read_mode_index_path(tag: 'tech')
+          .ul.nav.nav-pills.flex-column
+            li.nav-item
+              = link_to read_mode_index_path(tag: 'tech'), class: 'nav-link'
                 | tech
                 span#tech-count
                 span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
-            li
-              = link_to read_mode_index_path(tag: 'lifehacker')
+            li.nav-item
+              = link_to read_mode_index_path(tag: 'lifehacker'), class: 'nav-link'
                 | lifehacker
                 span#lifehacker-count
                 span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
-            li
-              = link_to read_mode_index_path(tag: 'rest')
+            li.nav-item
+              = link_to read_mode_index_path(tag: 'rest'), class: 'nav-link'
                 | rest
                 span#rest-count
                 span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
-            li
-              = link_to subscriptions_path
+            li.nav-item
+              = link_to subscriptions_path, class: 'nav-link'
                 | subscriptions
                 span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-th-list style="font-size:16px;"
-            li
-              = link_to enqueue_cache_all_feeds_path
+            li.nav-item
+              = link_to enqueue_cache_all_feeds_path, class: 'nav-link'
                 | refresh all
                 span.pull-right.hidden-xs.showopacity.glyphicon.glyphicon-refresh style="font-size:16px;"
-        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+        main.col-sm-9.offset-sm-3.col-md-10.offset-md-2.pt-3
 
           = yield
 
