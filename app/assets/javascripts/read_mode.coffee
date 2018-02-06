@@ -102,4 +102,6 @@ document_loaded = ->
   myReader.initializeReader()
 
 $(document).on 'page:load', document_loaded
+$(document).on 'turbolinks:load', document_loaded
+
 $(document).ready(document_loaded)
