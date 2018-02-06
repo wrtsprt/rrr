@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
     member do
       get 'cache_feed'
+      put 'mark_all_read_for_subscription'
     end
   end
 

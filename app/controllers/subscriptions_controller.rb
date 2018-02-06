@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-  before_action :set_subscription, only: [:show, :edit, :update, :destroy, :cache_feed]
+  before_action :set_subscription, only: [:show, :edit, :update, :destroy, :cache_feed, :mark_all_read_for_subscription]
 
   # GET /subscriptions
   # GET /subscriptions.json
@@ -100,6 +100,14 @@ class SubscriptionsController < ApplicationController
     FeedItem.update_all read: true
     respond_to do |format|
       format.html { redirect_to subscriptions_url, notice: 'All marked as read' }
+      format.json { head :no_content }
+    end
+  end
+
+  def mark_all_read_for_subscription
+    @subscription.feed_items.update_all read: true, updated_at: Time.now
+    respond_to do |format|
+      format.html { redirect_to subscriptions_url, notice: "All marked as read for #{@subscription.name}" }
       format.json { head :no_content }
     end
   end
