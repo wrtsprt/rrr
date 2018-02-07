@@ -1,4 +1,6 @@
 class ReadModeController < ApplicationController
+  protect_from_forgery with: :null_session
+
   def index
     @items = FeedItem.where(read: false).order(published_at: :asc)
 
