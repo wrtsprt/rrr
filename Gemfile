@@ -45,7 +45,9 @@ gem 'slim-rails'
 gem 'bootstrap', '~> 4.0.0'
 gem 'devise'
 
-gem 'acts-as-taggable-on'
+# TODO: remove once new stable version > 4.0 is released
+# https://rubygems.org/gems/acts-as-taggable-on
+gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 
 gem 'sidekiq'
 gem 'sidekiq-cron'
