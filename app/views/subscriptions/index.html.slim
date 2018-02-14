@@ -27,7 +27,7 @@
         th Name
         th Feed url
         th
-          span.glyphicon.glyphicon-exclamation-sign
+          span.fa.fa-exclamation-sign
         th
         th
         th
@@ -43,20 +43,20 @@
           td = subscription.feed_url
           - if subscription.subscription_notifications.count != 0
             td= link_to(subscription_subscription_notifications_path(subscription)) do
-              span.glyphicon.glyphicon-exclamation-sign.alert-danger
+              span.fa.fa-exclamation-sign.alert-danger
               | &nbsp;
               = subscription.subscription_notifications.count
           - else
             td
           td = "<b>#{subscription.feed_items.where(read: false).count}</b> (#{subscription.feed_items.count})".html_safe
           td = link_to mark_all_read_for_subscription_subscription_path(subscription), method: :put do
-            span.glyphicon.glyphicon-ok
+            span.fa.fa-ok
           td = link_to cache_feed_subscription_path(subscription) do
-            span.glyphicon.glyphicon-refresh
+            span.fa.fa-refresh
           td = link_to edit_subscription_path(subscription) do
-            span.glyphicon.glyphicon-pencil
+            span.fa.fa-pencil
           td = link_to subscription, data: {:confirm => 'Are you sure?'}, :method => :delete
-            span.glyphicon.glyphicon-remove style="color: red"
+            span.fa.fa-remove style="color: red"
           td = subscription.tag_list
 
 .row
