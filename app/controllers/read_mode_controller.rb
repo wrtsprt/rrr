@@ -27,18 +27,8 @@ class ReadModeController < ApplicationController
       5
     end
 
-    subscription_query= Subscription.where('1 == 1')
-    if params[:tag].present?
-      subscription_query = subscription_query.tagged_with(params[:tag])
-    end
-
-    feed_item_query = FeedItem.unread
-    if params[:tag].present?
-      subscription_ids = Subscription.tagged_with(params[:tag]).ids
-      feed_item_query = feed_item_query.where(subscription_id: subscription_ids)
-    end
+    feed_item_query = filter_items(params[:tag])
     @items = feed_item_query.order(published_at: :asc).limit(limit)
-
 
     @items_representation = @items.map do |item|
       representation = {
@@ -59,21 +49,30 @@ class ReadModeController < ApplicationController
   end
 
   def stats
-    subscription_query= Subscription.where('1 == 1')
-    if params[:tag].present?
-      subscription_query = subscription_query.tagged_with(params[:tag])
-    end
-
-    feed_item_query = FeedItem.unread
-    if params[:tag].present?
-      subscription_ids = Subscription.tagged_with(params[:tag]).ids
-      feed_item_query = feed_item_query.where(subscription_id: subscription_ids)
-    end
+    feed_item_query = filter_items(params[:tag])
     @unread_count = feed_item_query.count
 
     respond_to do |format|
       format.json { render :json => { count: @unread_count }  }
     end
+  end
+
+  def filter_items(tag)
+    subscription_query= Subscription.where('true')
+    feed_item_query = FeedItem.unread
+
+    if tag.present?
+      if tag == 'rest'
+        subscription_query = subscription_query.tagged_with(%w(tech lifehacker), exclude: true)
+      else
+        subscription_query = subscription_query.tagged_with(params[:tag])
+      end
+
+      subscription_ids = subscription_query.ids
+      feed_item_query = feed_item_query.where(subscription_id: subscription_ids)
+    end
+
+    feed_item_query
   end
 
 end
