@@ -39,6 +39,7 @@ class @Reader
     return unless article
     $('#current_article #title').html(article.title)
     $('#current_article #subscription_name').html(article.subscription_name)
+    $('#current_article #published_at').html(article.published_at)
     $('#current_article #body').html(article.content)
     $('#current_article #meta #article_id').html(article.id)
     $('#current_article #source a').attr('href',article.url)

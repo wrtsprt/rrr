@@ -33,7 +33,7 @@ class ReadModeController < ApplicationController
     @items_representation = @items.map do |item|
       representation = {
           title: item.title,
-          published_at: item.published_at,
+          published_at: item.published_at.to_datetime.to_formatted_s(:long),
           id: item.id,
           url: item.url,
           content: item.sanitized_content,
