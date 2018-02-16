@@ -50,7 +50,7 @@
             td
           td = "<b>#{subscription.feed_items.where(read: false).count}</b> (#{subscription.feed_items.count})".html_safe
           td = link_to mark_all_read_for_subscription_subscription_path(subscription), method: :put do
-            span.fa.fa-ok
+            span.fa.fa-check
           td = link_to cache_feed_subscription_path(subscription) do
             span.fa.fa-refresh
           td = link_to edit_subscription_path(subscription) do
