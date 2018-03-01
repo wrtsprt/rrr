@@ -1,4 +1,4 @@
-class CreateSubscriptionNotifications < ActiveRecord::Migration
+class CreateSubscriptionNotifications < ActiveRecord::Migration[4.2]
   def change
     create_table :subscription_notifications do |t|
       t.string :type
