@@ -17,6 +17,3 @@ test:
   <<: *default
   database: rrr_test
 
-production:
-  <<: *default
-  database: rrr_prod

@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/mbleigh/acts-as-taggable-on.git
-  revision: 38fefffc8f104455f87fdccd77841a2f550b16c6
-  specs:
-    acts-as-taggable-on (5.0.0)
-      activerecord (>= 4.2.8)
-
-GIT
   remote: https://github.com/feedbin/opml_saw.git
   revision: 61d8c2dd3d46e9cae38178754469dd9da7c8bd6a
   branch: master
@@ -53,6 +46,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (5.0.0)
+      activerecord (>= 4.2.8)
     arel (8.0.0)
     autoprefixer-rails (7.2.5)
       execjs
@@ -265,7 +260,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on!
+  acts-as-taggable-on
   better_errors
   binding_of_caller
   bootstrap (~> 4.0.0)
@@ -293,6 +288,9 @@ DEPENDENCIES
   turbolinks
   typhoeus
   uglifier (>= 1.3.0)
+
+RUBY VERSION
+   ruby 2.4.2p198
 
 BUNDLED WITH
    1.16.1

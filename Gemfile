@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.4.2"
+
 gem 'rails', '~> 5.1.0'
 
 gem "pg", "~> 0.18"
@@ -45,9 +47,7 @@ gem 'slim-rails'
 gem 'bootstrap', '~> 4.0.0'
 gem 'devise'
 
-# TODO: remove once new stable version > 4.0 is released
-# https://rubygems.org/gems/acts-as-taggable-on
-gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
+gem 'acts-as-taggable-on'
 
 gem 'sidekiq'
 gem 'sidekiq-cron'
