@@ -42,7 +42,7 @@ class FeedItemDownloader
 
   def self.sanitize_content(dangerous_content)
     scrubber = Rails::Html::TargetScrubber.new
-    scrubber.tags = ['style']
+    scrubber.tags = ['style', 'script']
 
     html_fragment = Loofah.fragment(dangerous_content)
     html_fragment.scrub!(scrubber)
