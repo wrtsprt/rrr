@@ -54,6 +54,9 @@ gem 'sidekiq-cron'
 
 gem 'rails-html-sanitizer'
 
+gem 'webpacker'
+gem 'foreman'
+
 group :development do
   gem 'better_errors'
   gem "binding_of_caller"
