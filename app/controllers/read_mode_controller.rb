@@ -11,6 +11,10 @@ class ReadModeController < ApplicationController
     end
   end
 
+  def vue
+
+  end
+
   def mark_item_as_read
     if FeedItem.find(params[:article_id]).update_attributes read: true
       render plain: 'very well than'

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'improve_sanitization/show'
 
   get 'read_mode/index'
+  get 'read_mode/vue'
   get 'read_mode/get'
   get 'read_mode/stats'
   post 'read_mode/mark_item_as_read'
